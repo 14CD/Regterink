@@ -11,7 +11,7 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="site-assets/css/main.min.css" rel="stylesheet">
+    <link href="assets/css/main.min.css" rel="stylesheet">
 
     <!-- Glyphicons for social media -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
@@ -62,6 +62,6 @@
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Custom scripts for this template -->
-<script src="site-assets/js/creative.min.js"></script>
+<script src="assets/js/creative.min.js"></script>
 </body>
 </html>
