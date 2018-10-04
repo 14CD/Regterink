@@ -89,5 +89,7 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 
+mvctest/config.php
+
 
 # End of https://www.gitignore.io/api/phpstorm,composer
