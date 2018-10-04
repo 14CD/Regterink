@@ -11,5 +11,10 @@
       "name": "14CD",
       "email": "email@example.com"
     }
-  ]
+  ],
+  "autoload": {
+    "classmap": [
+      "app/"
+    ]
+  }
 }
