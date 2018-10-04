@@ -230,7 +230,7 @@
                             06-123847303
                         </div>
                         <div class="col-md-12">
-                            mitchell.regterink@chello.nl
+                            <a href="mailto:addres@addres.nl">mitchell.regterink@chello.nl</a>
                         </div>
                     </div>
                 </div>
