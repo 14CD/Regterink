@@ -1,0 +1,217 @@
+body, html {
+    widath: 100%;
+    height: 100%
+}
+
+body {
+    font-family: Baskerville, "Baskerville Old Face", "Goudy Old Style", Garamond, "Times New Roman", serif;
+}
+
+a {
+    color: #666686;
+    -webkit-transition: all .2s;
+    transition: all .2s
+}
+
+a:hover {
+    color: white;
+}
+
+.darker-text {
+    color: rgba(255, 255, 255, .7)
+}
+
+#mainNav {
+    border-bottom: 1px solid rgba(33, 37, 41, .1);
+    background-color: #fff;
+    -webkit-transition: all 1s;
+    transition: all 1s
+}
+
+#mainNav .navbar-brand {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #666686;
+}
+
+#mainNav .brand-logo {
+    width: 50px;
+}
+
+.nav-link {
+    font-size: 1.2em;
+}
+
+header.masthead {
+    background-image: url(../img/header.jpg);
+    background-repeat: no-repeat;
+    /*background-position: center center;*/
+    background-size: cover
+}
+
+header.mastheadLogin {
+    background-image: url(../img/bg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+header.masthead hr {
+    margin-top: 30px;
+    margin-bottom: 30px
+}
+
+header.masthead h1 {
+    font-size: 2rem
+}
+
+header.masthead p {
+    font-weight: 300
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#services {
+    padding: 2% 0 5% 0;
+    background-color: #666686;
+    color: white;
+}
+
+#services .jumbotron {
+    margin-bottom: 0;
+    background-color: #666686;
+}
+
+.card-text {
+    color: black;
+}
+
+.line {
+    -webkit-box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.75);
+}
+
+.card {
+    border: none;
+    border-radius: 20px;
+}
+
+.img-responsive {
+    width: auto;
+    height: 300px;
+}
+
+.card img {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.btn {
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 300px;
+}
+
+.btn-xl {
+    padding: 1rem 2rem
+}
+
+.btn-primary {
+    background-color: #666686;
+    border-color: #666686;
+}
+
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+    color: #fff;
+    background-color: #666690 !important
+}
+
+.btn-primary:active, .btn-primary:focus {
+    -webkit-box-shadow: 0 0 0 .2rem rgba(240, 95, 64, .5) !important;
+    box-shadow: 0 0 0 .2rem rgba(240, 95, 64, .5) !important;
+}
+
+#footer .jumbotron {
+    margin-bottom: 0
+}
+
+@media (min-width: 768px) {
+    header.masthead p {
+        font-size: 1.15rem
+    }
+}
+
+@media (min-width: 992px) {
+    header.masthead {
+        height: 100vh;
+        min-height: 650px;
+        padding-top: 0;
+        padding-bottom: 0
+    }
+
+    header.masthead h1 {
+        font-size: 3rem
+    }
+}
+
+@media (min-width: 1200px) {
+    header.masthead h1 {
+        font-size: 4rem
+    }
+}
+
+@media (min-width: 992px) {
+    #mainNav {
+        border-color: transparent;
+        background-color: transparent
+    }
+
+    #mainNav .navbar-brand {
+        color: rgba(255, 255, 255, .7)
+    }
+
+    #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+        color: #fff
+    }
+
+    #mainNav .navbar-nav > li.nav-item > a.nav-link {
+        padding: .5rem 1rem
+    }
+
+    #mainNav .navbar-nav > li.nav-item > a.nav-link, #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
+        color: rgba(255, 255, 255, .7)
+    }
+
+    #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover, #mainNav .navbar-nav > li.nav-item > a.nav-link:hover {
+        color: #fff
+    }
+
+    #mainNav.navbar-shrink {
+        border-bottom: 1px solid rgba(33, 37, 41, .1);
+        background-color: #fff
+    }
+
+    #mainNav.navbar-shrink .navbar-brand {
+        color: #666686
+    }
+
+    #mainNav.navbar-shrink .navbar-brand:focus, #mainNav.navbar-shrink .navbar-brand:hover {
+        color: #666686
+    }
+
+    #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link, #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus {
+        color: #212529
+    }
+
+    #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus:hover, #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:hover {
+        color: #666686
+    }
+}
