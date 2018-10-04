@@ -143,6 +143,7 @@
 <section id="services" class="line">
     <div class="jumbotron">
         <div class="container">
+            <h1>Onze services</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aspernatur dicta doloribus eius et expedita
                 explicabo facilis fugit in iusto laudantium, magni molestiae mollitia natus necessitatibus numquam odio
                 officiis placeat praesentium quae quam quasi quisquam ratione reiciendis rerum sit tempora tenetur vel
@@ -156,37 +157,52 @@
         <div class="container">
             <h1>Contact</h1>
 
-            <form action="">
+            <form action="" method="POST">
                 <div class="row">
-                    <div class="col-md-2">
-                        Voornaam
+                    <div class="col-md-8">
+                        <div class="row mb-2">
+                            <div class="col-md-2">
+                                Naam
+                            </div>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-md-2">
+                                Achternaam
+                            </div>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-md-2">
+                                Email
+                            </div>
+                            <div class="col-md-10">
+                                <input type="email" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-md-2">
+                                Reden?
+                            </div>
+                            <div class="col-md-10">
+                                <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-md-2">
+
+                            </div>
+                            <div class="col-md-10" align="right">
+                                <a href="" class="btn btn-primary">Send</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-10">
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">
-                        Voornaam
-                    </div>
-                    <div class="col-md-10">
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">
-                        Voornaam
-                    </div>
-                    <div class="col-md-10">
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">
-                        Voornaam
-                    </div>
-                    <div class="col-md-10">
-                        <input type="text" class="form-control">
+                    <div class="col-md-4">
+                        <div id="map" style="width:400px;height:400px">
                     </div>
                 </div>
             </form>
@@ -280,5 +296,8 @@
 
 <!-- Custom scripts for this template -->
 <script src="site-assets/js/creative.min.js"></script>
+
+<script src="site-assets/js/maps.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
 </body>
 </html>
