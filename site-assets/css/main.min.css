@@ -77,13 +77,34 @@ header.masthead p {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-#services {
+#about {
     padding: 2% 0 5% 0;
     background-color: #666686;
     color: white;
 }
 
+#about .jumbotron {
+    margin-bottom: 0;
+    background-color: #666686;
+}
+
+#services {
+    padding: 2% 0 5% 0;
+    background-color: #E9ECEF;
+}
+
 #services .jumbotron {
+    margin-bottom: 0;
+    background-color: #E9ECEF;
+}
+
+#contact {
+    padding: 2% 0 5% 0;
+    background-color: #666686;
+    color: white;
+}
+
+#contact .jumbotron {
     margin-bottom: 0;
     background-color: #666686;
 }

@@ -14,7 +14,8 @@
     <link href="site-assets/css/main.min.css" rel="stylesheet">
 
     <!-- Glyphicons for social media -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 
 <body id="page-top">
@@ -54,8 +55,10 @@
                     <h2>Ontmoet de familie Regterink</h2>
                 </div>
                 <div class="col-lg-8 mx-auto">
-                    <p class="darker-text mb-5">Al jaren werken wij met kinderen die het moeilijk thuis hebben, of met kinderen
-                        met gedragsproblemen. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, quos?</p>
+                    <p class="darker-text mb-5">Al jaren werken wij met kinderen die het moeilijk thuis hebben, of met
+                        kinderen
+                        met gedragsproblemen. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae,
+                        quos?</p>
                     <a class="btn btn-primary btn-xl js-scroll-trigger line" href="#about">Bekijk jou mogelijkheden</a>
                 </div>
             </div>
@@ -63,24 +66,29 @@
     </div>
 </header>
 
-<section id="services" class="line">
+<section id="about" class="line">
     <div class="jumbotron">
         <div class="container">
             <h1>Over ons</h1>
 
             <div class="row">
                 <div class="col-md-12">
-                    Waar zal ik beginnen? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aliquid consectetur cum enim, est labore nihil obcaecati odio placeat quis rem unde vero! A aperiam asperiores cumque illum nemo omnis quidem rem repellat sint vel. Fugit harum labore natus!
+                    Waar zal ik beginnen? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aliquid
+                    consectetur cum enim, est labore nihil obcaecati odio placeat quis rem unde vero! A aperiam
+                    asperiores cumque illum nemo omnis quidem rem repellat sint vel. Fugit harum labore natus!
                 </div>
 
                 <div class="col-md-12">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus fuga ipsam molestiae neque sint temporibus. Aut earum esse id iste itaque labore magni modi omnis sit voluptatem! Ad at, dolore eius ex fugit impedit itaque laborum libero nam nemo, nihil omnis possimus provident reprehenderit saepe sit ut vel vero.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus fuga ipsam molestiae
+                    neque sint temporibus. Aut earum esse id iste itaque labore magni modi omnis sit voluptatem! Ad at,
+                    dolore eius ex fugit impedit itaque laborum libero nam nemo, nihil omnis possimus provident
+                    reprehenderit saepe sit ut vel vero.
                 </div>
 
                 <div class="row mt-4">
                     <div class="col-md-3">
                         <div class="card mb-4 line">
-                            <img class="img-fluid img-responsive" src="site-assets/img/mens1.jpg" />
+                            <img class="img-fluid img-responsive" src="site-assets/img/mens1.jpg"/>
                             <div class="card-body">
                                 <h4 class="card-text">Mitchell Regterink</h4>
                                 <h6 class="card-text"><i>Eigenaar</i></h6>
@@ -92,7 +100,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card mb-4 line">
-                            <img class="img-fluid img-responsive" src="site-assets/img/mens2.jpg" />
+                            <img class="img-fluid img-responsive" src="site-assets/img/mens2.jpg"/>
                             <div class="card-body">
                                 <h4 class="card-text">Ruben Van der Meer</h4>
                                 <h6 class="card-text"><i>Verzorgende</i></h6>
@@ -104,7 +112,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card mb-4 line">
-                            <img class="img-fluid img-responsive" src="site-assets/img/mens3.jpg" />
+                            <img class="img-fluid img-responsive" src="site-assets/img/mens3.jpg"/>
                             <div class="card-body">
                                 <h4 class="card-text">Willem van Bethlehem</h4>
                                 <h6 class="card-text"><i>Verzorgende</i></h6>
@@ -116,7 +124,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card mb-4 line">
-                            <img class="img-fluid img-responsive" src="site-assets/img/mens4.jpg" />
+                            <img class="img-fluid img-responsive" src="site-assets/img/mens4.jpg"/>
                             <div class="card-body">
                                 <h4 class="card-text">Jake Van der Houten</h4>
                                 <h6 class="card-text"><i>Notulist</i></h6>
@@ -128,6 +136,60 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="line">
+    <div class="jumbotron">
+        <div class="container">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aspernatur dicta doloribus eius et expedita
+                explicabo facilis fugit in iusto laudantium, magni molestiae mollitia natus necessitatibus numquam odio
+                officiis placeat praesentium quae quam quasi quisquam ratione reiciendis rerum sit tempora tenetur vel
+                vero voluptas? Aliquam deleniti facere magnam totam vero!</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="line">
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Contact</h1>
+
+            <form action="">
+                <div class="row">
+                    <div class="col-md-2">
+                        Voornaam
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Voornaam
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Voornaam
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Voornaam
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </section>
