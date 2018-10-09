@@ -39,7 +39,6 @@
                             quos?</p>
                         <a class="btn btn-primary btn-xl js-scroll-trigger line" href="#about">Bekijk jou
                             mogelijkheden</a>
-                        <script>swal("Good job!", "You clicked the button!", "success");</script>
                     </div>
                 </div>
             </div>
