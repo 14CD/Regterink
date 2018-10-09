@@ -3,5 +3,7 @@
  * Created by PhpStorm.
  * User: aaronweggemans
  * Date: 09/10/2018
- * Time: 15:49
+ * Time: 20:45
  */
+
+require "views/admin/verzorgende.view.php";
