@@ -1,6 +1,6 @@
 <?php
-// Quasi-entrypoint.
+// Request entry point.
 require '../core/bootstrap.php';
 
-require Router::load('../routes.php')
+Router::load('../routes.php')
     ->direct(Request::getUri());

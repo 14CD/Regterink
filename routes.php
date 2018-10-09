@@ -1,5 +1,5 @@
 <?php
 
 $router->define([
-    'home' => 'HomeController@get'
-]);
+    "home" => "HomeController@get"
+], "GET");

@@ -15,7 +15,6 @@ class Request
     }
 
     public static function getHeaders() {
-
+        
     }
-
 }

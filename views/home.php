@@ -11,7 +11,7 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="views/assets/css/main.min.css" rel="stylesheet">
+    <link href="assets/css/main.min.css" rel="stylesheet">
 
     <!-- Glyphicons for social media -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
@@ -24,7 +24,7 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container-fluid">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
-            <img src="views/assets/img/logo/logoregterink.png" alt="" class="brand-logo"> Gezinshuis Regterink
+            <img src="assets/img/logo/logoregterink.png" alt="" class="brand-logo"> Gezinshuis Regterink
         </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
@@ -88,7 +88,7 @@
                 <div class="row mt-4">
                     <div class="col-md-3">
                         <div class="card mb-4 line">
-                            <img class="img-fluid img-responsive" src="views/assets/img/mens1.jpg"/>
+                            <img class="img-fluid img-responsive" src="assets/img/mens1.jpg"/>
                             <div class="card-body">
                                 <h4 class="card-text">Mitchell Regterink</h4>
                                 <h6 class="card-text"><i>Eigenaar</i></h6>
@@ -100,7 +100,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card mb-4 line">
-                            <img class="img-fluid img-responsive" src="views/assets/img/mens2.jpg"/>
+                            <img class="img-fluid img-responsive" src="assets/img/mens2.jpg"/>
                             <div class="card-body">
                                 <h4 class="card-text">Ruben Van der Meer</h4>
                                 <h6 class="card-text"><i>Verzorgende</i></h6>
@@ -112,7 +112,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card mb-4 line">
-                            <img class="img-fluid img-responsive" src="views/assets/img/mens3.jpg"/>
+                            <img class="img-fluid img-responsive" src="assets/img/mens3.jpg"/>
                             <div class="card-body">
                                 <h4 class="card-text">Willem van Bethlehem</h4>
                                 <h6 class="card-text"><i>Verzorgende</i></h6>
@@ -124,7 +124,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card mb-4 line">
-                            <img class="img-fluid img-responsive" src="views/assets/img/mens4.jpg"/>
+                            <img class="img-fluid img-responsive" src="assets/img/mens4.jpg"/>
                             <div class="card-body">
                                 <h4 class="card-text">Jake Van der Houten</h4>
                                 <h6 class="card-text"><i>Notulist</i></h6>
@@ -295,9 +295,9 @@
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Custom scripts for this template -->
-<script src="views/assets/js/creative.min.js"></script>
+<script src="assets/js/creative.min.js"></script>
 
-<script src="views/assets/js/maps.js"></script>
+<script src="assets/js/maps.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1s66kXMm6obk6K67NcL1zvTNwgAC7KTU&callback=myMap"></script>
 </body>
 </html>

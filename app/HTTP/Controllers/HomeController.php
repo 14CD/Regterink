@@ -9,6 +9,6 @@
 class HomeController
 {
     public function get() {
-
+        return "AAAAAAAA";
     }
 }
