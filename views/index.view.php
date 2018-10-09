@@ -39,6 +39,7 @@
                             quos?</p>
                         <a class="btn btn-primary btn-xl js-scroll-trigger line" href="#about">Bekijk jou
                             mogelijkheden</a>
+                        <script>swal("Good job!", "You clicked the button!", "success");</script>
                     </div>
                 </div>
             </div>
@@ -200,10 +201,4 @@
         </div>
     </section>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="site-assets/js/creative.min.js"></script>
 <?php require 'partials/foot.php'; ?>

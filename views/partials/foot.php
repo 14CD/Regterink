@@ -13,5 +13,6 @@
 
 <!-- Custom scripts for this template -->
 <script src="public/js/creative.min.js"></script>
+
 </body>
 </html>
