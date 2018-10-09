@@ -7,6 +7,8 @@ $router->get('', 'controllers/index.php');
 $router->get('home', 'controllers/index.php');
 $router->get('login', 'controllers/login.php');
 
+$router->get('dashboard', 'controllers/dashboard.php');
+
 
 //var_dump($router);
 /**
