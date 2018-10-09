@@ -29,9 +29,6 @@ class Router
 
     public function direct($uri, $requesttype)
     {
-        var_dump($uri);
-        var_dump($requesttype);
-        //example: www.wfgamesapp.com/players we only need players
         if(array_key_exists($uri, $this->routes[$requesttype])){
             return $this->routes[$requesttype][$uri];
         }else{
