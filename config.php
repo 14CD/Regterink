@@ -10,9 +10,9 @@
 
 return [
     'database' => [
-        'name' => 'database name',
-        'username' => 'username',
-        'password' => 'password',
+        'name' => 'db_regterink',
+        'username' => 'root',
+        'password' => 'rootroot',
         'connection' => 'mysql:host=localhost:3306',
         'options' => [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING

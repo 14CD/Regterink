@@ -2,15 +2,11 @@
 /**
  * GET routes
  */
-$router->get('your_unique_id/P1_OOAPP_Opdracht', 'controllers/index.php');
-$router->get('your_unique_id/P1_OOAPP_Opdracht/home', 'controllers/index.php');
-$router->get('your_unique_id/P1_OOAPP_Opdracht/players', 'controllers/players.php');
-$router->get('your_unique_id/P1_OOAPP_Opdracht/games', 'controllers/games.php');
-$router->get('your_unique_id/P1_OOAPP_Opdracht/users', 'controllers/users.php');
-$router->get('your_unique_id/P1_OOAPP_Opdracht/battles', 'controllers/battles.php');
-$router->get('your_unique_id/P1_OOAPP_Opdracht/excercise', 'controllers/excercise.php');
+$router->get('', 'controllers/index.php');
+$router->get('home', 'controllers/index.php');
+$router->get('login', 'controllers/login.php');
 
 /**
  * POST routes
  */
-$router->post('your_unique_id/P1_OOAPP_Opdracht/add_player', 'controllers/add_player.php');
+$router->post('/add_player', 'controllers/add_player.php');
