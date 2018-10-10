@@ -10,6 +10,9 @@
                     </li>
                     <li class="breadcrumb-item active">Verzorgende</li>
                 </ol>
+                <div class="align" align="right">
+                    <a href="new_employee" class="btn btn-secondary mb-2">Nieuwe verzorger</a>
+                </div>
                 <table class="table">
                     <thead class="thead-dark">
                     <tr>

@@ -1,6 +1,6 @@
 <ul class="sidebar navbar-nav">
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="dashboard">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
         </a>
@@ -15,15 +15,17 @@
             <h6 class="dropdown-header">Informatie</h6>
             <a class="dropdown-item" href="">Account informatie</a>
             <a class="dropdown-item" href="">Wachtwoord vergeten</a>
-<!--            <div class="dropdown-divider"></div>-->
-<!--            <h6 class="dropdown-header">Accounts:</h6>-->
-<!--            <a class="dropdown-item" href="">Accounts</a>-->
         </div>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="">
-            <i class="fas fa-fw fa-chart-area"></i>
+        <a class="nav-link" href="employee">
+            <i class="fas fa-fw fa-users"></i>
             <span>Verzorgende</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="">
+            <i class="fas fa-fw fa-child"></i>
+            <span>Kinderen (Klanten)</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="">
