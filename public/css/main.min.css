@@ -49,6 +49,15 @@ header.masthead {
     background-size: cover
 }
 
+header.mastheadDanger {
+    background-color: lightblue;
+    background-repeat: no-repeat;
+    /*background-position: center center;*/
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
 header.mastheadLogin {
     background-image: url(../../public/images/bg.png);
     background-repeat: no-repeat;
