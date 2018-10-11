@@ -8,12 +8,12 @@ $router->get('home', 'controllers/index.php');
 $router->get('login', 'controllers/login.php');
 
 $router->get('dashboard', 'controllers/dashboard.php');
-$router->get('employee', 'controllers/verzorgende.php');
+$router->get('user', 'controllers/users.php');
 
-$router->get('new_employee', 'controllers/nieuw_verzorgende.php');
+$router->get('add_user', 'controllers/new_user.php');
 //var_dump($router);
 /**
  * POST routes
  */
 $router->post('/add_player', 'controllers/add_player.php');
-$router->post('add_employee', 'controllers/nieuw_verzorgende');
+$router->post('post_add_user', 'controllers/post/add_user.php');

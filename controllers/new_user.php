@@ -6,4 +6,4 @@
  * Time: 21:27
  */
 
-require "views/admin/nieuw_verzorgende.php";
+require "views/admin/add_user.view.php";

@@ -5,6 +5,12 @@
             <span>Dashboard</span>
         </a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="add_user">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Nieuwe gebruiker</span>
+        </a>
+    </li>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
            aria-haspopup="true" aria-expanded="false">
@@ -18,7 +24,7 @@
         </div>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="employee">
+        <a class="nav-link" href="user">
             <i class="fas fa-fw fa-users"></i>
             <span>Verzorgende</span></a>
     </li>

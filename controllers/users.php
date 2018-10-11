@@ -6,4 +6,4 @@
  * Time: 20:45
  */
 
-require "views/admin/verzorgende.view.php";
+require "views/admin/users.view.php";
