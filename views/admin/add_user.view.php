@@ -44,7 +44,7 @@
                                 <p>Mobiele telefoon</p>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" name="mobile">
+                                <input type="number" class="form-control" maxlength="10" name="mobile">
                             </div>
                         </div>
                         <div class="row">
@@ -52,11 +52,11 @@
                                 <p>Baan</p>
                             </div>
                             <div class="col-md-8">
-                                <select name="roleid" id="" class="form-control">
-                                    <option value="">Administrator</option>
-                                    <option value="">Verzorgende</option>
-                                    <option value="">Ouders</option>
-                                    <option value="">Kind</option>
+                                <select id="" name="roleid" class="form-control">
+                                    <option value="Administrator">Administrator</option>
+                                    <option value="Verzorgende">Verzorgende</option>
+                                    <option value="Ouders">Ouders</option>
+                                    <option value="Kind">Kind</option>
                                 </select>
                             </div>
                         </div>

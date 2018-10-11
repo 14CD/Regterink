@@ -8,7 +8,7 @@
                     <li class="breadcrumb-item">
                         <a href="#">Dashboard</a>
                     </li>
-                    <li class="breadcrumb-item active">Verzorgende</li>
+                    <li class="breadcrumb-item active">Gebruikers</li>
                 </ol>
                 <table class="table">
                     <thead class="thead-dark">
