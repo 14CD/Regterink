@@ -68,9 +68,9 @@
                             <div class="col-md-10"></div>
                             <div class="col-md-2" align="right">
                                 <input
-                                        type="submit"
-                                        class="form-control"
-                                        value="Klik"
+                                    type="submit"
+                                    class="form-control"
+                                    value="Klik"
                                 />
                             </div>
                         </div>
@@ -83,9 +83,8 @@
 <?php require "partials/foot.php" ?>
 <script>
     //Eerst moet hij swal laten zien dan pas redirecten naar post_add_user
-    $(document).ready(function () {
-        $('#sendForm').submit(function () {
-            swal("Success!", "Uw gebruiker is aangemaakt!", "success");
-        });
+    $('#sendForm').submit(function (event) {
+        swal("Success!", "Uw gebruiker is aangemaakt!", "success");
+        event.preventDefault();
     });
 </script>

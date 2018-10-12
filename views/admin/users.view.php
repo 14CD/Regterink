@@ -30,6 +30,7 @@
                                     {
                                         if ($key == "id")
                                         {
+                                            $id = $value;
                                             echo "<th scope='row'>" . $value . "</th>";
                                         }
                                         elseif ($key == "roleid" && $value == 1)
@@ -53,7 +54,7 @@
                                             echo "<td>" . $value . "</td>";
                                         }
                                     }
-                                echo "<td><button class='btn btn-danger'>Verwijder gebruiker</button></td>";
+                                echo "<td><button class='btn btn-danger' formaction='post_remove_user/" . $id . "/'>Verwijder gebruiker</button></td>";
                                 echo "</tr>";
                             }
                         ?>
