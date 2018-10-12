@@ -15,7 +15,7 @@ class QueryBuilder
         $this->pdo = $pdo;
     }
 
-    public function selectAll($table, $intoClass)
+    public function selectAll($table)
     {
         /**
          * @var $statement all data for given table
@@ -24,18 +24,20 @@ class QueryBuilder
         $statement = $this->pdo->prepare("SELECT * FROM {$table}");
         $statement->execute();
 
-        return $statement->fetchAll(PDO::FETCH_CLASS, $intoClass);
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function insertInto($table, $conditions, $values)
     {
-        for ($i = 0; $i < count($conditions); $i++)
-        {
-            $statement = $this->pdo->prepare("INSERT INTO `{$table}` ({$conditions[$i]}) VALUES ({$values[$i]})");
+        $conditionsArray = implode(", ", array_map(function ($str){
+            return sprintf("`%s`", $str);
+        }, $conditions));
 
-            $statement->execute([
-                $conditions[$i] => $values[$i]
-            ]);
-        }
+        $valuesArray = implode(", ", array_map(function ($value) {
+            return sprintf("'%s'", $value);
+        }, $values));
+
+        $statement = $this->pdo->prepare("INSERT INTO {$table} ($conditionsArray) VALUES ($valuesArray)");
+        $statement->execute();
     }
 }

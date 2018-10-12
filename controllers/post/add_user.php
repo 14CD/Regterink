@@ -7,15 +7,13 @@
  */
 
 //retrieve data
-$first_name = $_POST['fname'];
-$last_name = $_POST['lname'];
-$date = $_POST['date'];
-$email = $_POST['email'];
-$mobile = $_POST['mobile'];
-$roleid = $_POST['roleid'];
+$table = "users";
+$conditions = ["fname", "lname", "email", "mobile", "roleid"];
+$values = [$_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['mobile'], $_POST['roleid']];
+
+//checks on data
 
 //database insert
-$table = "roles";
-$conditions = ["description"];
-$values = ["User"];
 $app['database']->insertInto($table, $conditions, $values);
+
+require("views/admin/add_user.view.php");

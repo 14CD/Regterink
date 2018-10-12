@@ -15,5 +15,7 @@
     <link href="public/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="public/css/sb-admin.css" rel="stylesheet">
+    <!-- Sweet alert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body id="page-top">
