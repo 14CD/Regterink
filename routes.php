@@ -18,4 +18,5 @@ $router->get('add_user', 'controllers/new_user.php');
 $router->post('/add_player', 'controllers/add_player.php');
 $router->post('post_add_user', 'controllers/post/add_user.php');
 
-$router->post('post_remove_user/{id}/', 'controllers/post/remove_user');
+//Remove actions
+$router->get('post_remove_user', 'controllers/post/post_remove_user.php');

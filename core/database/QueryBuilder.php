@@ -7,6 +7,7 @@
 class QueryBuilder
 {
     protected $pdo;
+
     /**
      * @inheritDoc
      */
@@ -29,7 +30,7 @@ class QueryBuilder
 
     public function insertInto($table, $conditions, $values)
     {
-        $conditionsArray = implode(", ", array_map(function ($str){
+        $conditionsArray = implode(", ", array_map(function ($str) {
             return sprintf("`%s`", $str);
         }, $conditions));
 
@@ -39,5 +40,11 @@ class QueryBuilder
 
         $statement = $this->pdo->prepare("INSERT INTO {$table} ($conditionsArray) VALUES ($valuesArray)");
         $statement->execute();
+    }
+
+    public function removeFromUsersTable($table, $id)
+    {
+        $sql = "DELETE FROM {$table} WHERE id={$id}";
+        $this->pdo->exec($sql);
     }
 }

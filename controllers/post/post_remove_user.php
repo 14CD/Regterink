@@ -6,4 +6,10 @@
  * Time: 01:08
  */
 
-die(var_dump("ta"));
+$id = $_GET['id'];
+
+//die(var_dump($id));
+
+$app['database']->removeFromUsersTable("users", $id);
+
+require "views/admin/users.view.php";

@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="dashboard">Dashboard</a>
+                    Dashboard
                 </li>
                 <li class="breadcrumb-item active">Nieuwe Gebruiker</li>
             </ol>
@@ -83,8 +83,8 @@
 <?php require "partials/foot.php" ?>
 <script>
     //Eerst moet hij swal laten zien dan pas redirecten naar post_add_user
-    $('#sendForm').submit(function (event) {
-        swal("Success!", "Uw gebruiker is aangemaakt!", "success");
-        event.preventDefault();
-    });
+    // $('#sendForm').submit(function (event) {
+    //     swal("Success!", "Uw gebruiker is aangemaakt!", "success");
+    //     event.preventDefault();
+    // });
 </script>

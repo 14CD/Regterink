@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="#">Dashboard</a>
+                        Dashboard
                     </li>
                     <li class="breadcrumb-item active">Gebruikers</li>
                 </ol>
@@ -23,41 +23,36 @@
                     </tr>
                     </thead>
                     <tbody>
-                        <?php
-                            foreach($users as $user) {
-                                echo "<tr>";
-                                    foreach($user as $key => $value)
-                                    {
-                                        if ($key == "id")
-                                        {
-                                            $id = $value;
-                                            echo "<th scope='row'>" . $value . "</th>";
-                                        }
-                                        elseif ($key == "roleid" && $value == 1)
-                                        {
-                                            echo "<td scope='row'>Administrator</td>";
-                                        }
-                                        elseif ($key == "roleid" && $value == 2)
-                                        {
-                                            echo "<td scope='row'>Verzorgende</td>";
-                                        }
-                                        elseif ($key == "roleid" && $value == 3)
-                                        {
-                                            echo "<td scope='row'>Ouders</td>";
-                                        }
-                                        elseif ($key == "roleid" && $value == 4)
-                                        {
-                                            echo "<td scope='row'>Kind</td>";
-                                        }
-                                        else
-                                        {
-                                            echo "<td>" . $value . "</td>";
-                                        }
-                                    }
-                                echo "<td><button class='btn btn-danger' formaction='post_remove_user/" . $id . "/'>Verwijder gebruiker</button></td>";
-                                echo "</tr>";
+                    <?php
+                    foreach ($users as $user) {
+                        echo "<tr>";
+                        foreach ($user as $key => $value) {
+                            if ($key == "id") {
+                                $id = $value;
+                                echo "<th scope='row'>" . $value . "</th>";
+                            } elseif ($key == "roleid" && $value == 1) {
+                                echo "<td scope='row'>Administrator</td>";
+                            } elseif ($key == "roleid" && $value == 2) {
+                                echo "<td scope='row'>Verzorgende</td>";
+                            } elseif ($key == "roleid" && $value == 3) {
+                                echo "<td scope='row'>Ouders</td>";
+                            } elseif ($key == "roleid" && $value == 4) {
+                                echo "<td scope='row'>Kind</td>";
+                            } else {
+                                echo "<td>" . $value . "</td>";
                             }
-                        ?>
+                        }
+                        echo "
+                            <form action='post_remove_user' method='get'>
+                                <td>
+                                    <input type='hidden' value='$id' name='id'>
+                                    <input type='submit' class='btn btn-danger' value='Verwijder gebruiker'>
+                                </td>
+                            </form>
+                        ";
+                        echo "</tr>";
+                    }
+                    ?>
                     </tbody>
                 </table>
             </div>

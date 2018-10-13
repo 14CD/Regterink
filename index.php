@@ -8,7 +8,6 @@
 $query = require 'core/bootstrap.php';
 $current = Request::uri();
 
-
 /**
  * Where are you in your page and where do you go with the
  * routes and controllers
