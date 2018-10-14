@@ -7,7 +7,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <h6 class="dropdown-header">Informatie</h6>
-            <a class="dropdown-item" href="">Account informatie</a>
+            <a class="dropdown-item" href="account_details">Account informatie</a>
             <a class="dropdown-item" href="">Wachtwoord vergeten</a>
         </div>
     </li>

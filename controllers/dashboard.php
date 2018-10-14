@@ -6,4 +6,6 @@
  * Time: 17:56
  */
 
+$users = $app['database']->selectAll('users');
+
 require "views/admin/index.view.php";

@@ -12,4 +12,4 @@ $id = $_GET['id'];
 
 $app['database']->removeFromUsersTable("users", $id);
 
-require "views/admin/users.view.php";
+header("Location: $url/user");

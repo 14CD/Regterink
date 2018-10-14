@@ -11,7 +11,8 @@ $router->get('dashboard', 'controllers/dashboard.php');
 $router->get('user', 'controllers/users.php');
 
 $router->get('add_user', 'controllers/new_user.php');
-//var_dump($router);
+
+$router->get('account_details', 'controllers/account_details.php');
 /**
  * POST routes
  */

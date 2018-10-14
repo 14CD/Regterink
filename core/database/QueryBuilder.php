@@ -47,4 +47,11 @@ class QueryBuilder
         $sql = "DELETE FROM {$table} WHERE id={$id}";
         $this->pdo->exec($sql);
     }
+
+    public function numberOfRows()
+    {
+        //retrieve amount of rows from users db
+        $result = $this->pdo->prepare("SELECT * FROM users");
+        return $result = $result->execute();
+    }
 }
