@@ -34,8 +34,8 @@
                 <i class="fas fa-user-circle fa-fw"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">Account</a>
-                <a class="dropdown-item" href="#">Wachtwoord vergeten</a>
+                <a class="dropdown-item" href="account_details">Account</a>
+                <a class="dropdown-item" href="forgot_password">Wachtwoord vergeten</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Loguit</a>
             </div>

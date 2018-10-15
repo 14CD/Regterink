@@ -6,4 +6,4 @@
  * Time: 21:07
  */
 
-require "views/admin/nuturings.view.php";
+require "views/admin/nuturing.view.php";

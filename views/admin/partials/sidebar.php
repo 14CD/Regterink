@@ -8,7 +8,7 @@
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <h6 class="dropdown-header">Informatie</h6>
             <a class="dropdown-item" href="account_details">Account informatie</a>
-            <a class="dropdown-item" href="">Wachtwoord vergeten</a>
+            <a class="dropdown-item" href="forgot_password">Wachtwoord vergeten</a>
         </div>
     </li>
     <li class="nav-item">
@@ -27,6 +27,11 @@
         <a class="nav-link" href="user">
             <i class="fas fa-fw fa-users"></i>
             <span>Gebruikers</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="nuturing">
+            <i class="fas fa-fw fa-heart"></i>
+            <span>Verzorgers</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="">

@@ -14,6 +14,8 @@ $router->get('user', 'controllers/users.php');
 $router->get('add_user', 'controllers/new_user.php');
 
 $router->get('account_details', 'controllers/account_details.php');
+
+$router->get('nuturing', 'controllers/nuturing.php');
 /**
  * POST routes
  */
