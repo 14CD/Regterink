@@ -6,6 +6,7 @@
 $router->get('', 'controllers/index.php');
 $router->get('home', 'controllers/index.php');
 $router->get('login', 'controllers/login.php');
+$router->get('forgot_password', 'controllers/forgot_password.php');
 
 $router->get('dashboard', 'controllers/dashboard.php');
 $router->get('user', 'controllers/users.php');
