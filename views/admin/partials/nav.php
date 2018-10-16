@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
     <a href="#" class="navbar-brand brand-logo">Dashboard Regterink</a>
     <div class="container"></div>
     <ul class="navbar-nav ml-auto ml-md-0">
@@ -34,8 +34,9 @@
                 <i class="fas fa-user-circle fa-fw"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="account_details">Account</a>
-                <a class="dropdown-item" href="forgot_password">Wachtwoord vergeten</a>
+                <a class="dropdown-item" href="account_details">account</a>
+                <a class="dropdown-item" href="add_user">nieuw account</a>
+                <a class="dropdown-item" href="forgot_password">wachtwoord vergeten</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Loguit</a>
             </div>

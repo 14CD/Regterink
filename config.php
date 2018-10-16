@@ -12,7 +12,7 @@ return [
     'database' => [
         'name' => 'db_regterink',
         'username' => 'root',
-        'password' => 'rootroot',
+        'password' => '24Oktober!',
         'connection' => 'mysql:host=127.0.0.1',
         'options' => [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
