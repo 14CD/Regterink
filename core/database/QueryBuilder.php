@@ -42,6 +42,26 @@ class QueryBuilder
         $statement->execute();
     }
 
+    public function LoginAs($values)
+    {   try{
+
+            $valuesArray = implode(", ", array_map(function ($value) {
+                return sprintf("'%s'", $value);
+            }, $values));
+
+            print_r($valuesArray);
+            //$statement = $this->pdo->prepare("SELECT email, password, role, active FROM users  WHERE email = ".$valuesArray['email']." ");
+            //$statement->execute();
+            //$result = $statement->fetchAll(PDO::FETCH_NUM);
+            //return $result;
+        }
+        catch(PDOException $e)
+        {
+            echo "Error: " . $e->getMessage();
+        }
+
+    }
+
     public function removeFromUsersTable($table, $id)
     {
         $sql = "DELETE FROM {$table} WHERE id={$id}";

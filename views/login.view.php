@@ -5,13 +5,13 @@
                 <div class="row">
                     <div class="col-lg-10 mx-auto">
                         <h2>Login</h2>
-                        <form action="" method="post">
+                        <form action="login_user" method="post">
                             <div class="row mt-2">
                                 <div class="col-md-4">
-                                    <h5>Gebruikersnaam:</h5>
+                                    <h5>Email:</h5>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control">
+                                    <input type="email" class="form-control" name="email">
                                 </div>
                             </div>
                             <div class="row mt-2">
@@ -19,7 +19,7 @@
                                     <h5>Password:</h5>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="password" class="form-control">
+                                    <input type="password" class="form-control" name="password">
                                 </div>
                             </div>
                             <div class="row mt-2">
