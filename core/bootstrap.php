@@ -2,7 +2,7 @@
 /** @var  $app empty variable to store config file */
 $app = [];
 
-$app['config'] = require 'config.php';
+$app['config'] = require 'config.example.php';
 
 /**
  *Require several classes
