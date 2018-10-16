@@ -44,22 +44,51 @@ class QueryBuilder
 
     public function LoginAs($values)
     {   try{
+            //SQL query being executed
+            $statement = $this->pdo->prepare("SELECT email, password, role, active FROM users  WHERE email = '$values[0]' ");
+            $statement->execute();
+            $result = $statement->fetchAll(PDO::FETCH_NUM);
 
-            $valuesArray = implode(", ", array_map(function ($value) {
-                return sprintf("'%s'", $value);
-            }, $values));
+            //Hashed password from database
+            $hash = $result[0][1];
+            //Check if user exists
+            if (isset($result[0])) {
 
-            print_r($valuesArray);
-            //$statement = $this->pdo->prepare("SELECT email, password, role, active FROM users  WHERE email = ".$valuesArray['email']." ");
-            //$statement->execute();
-            //$result = $statement->fetchAll(PDO::FETCH_NUM);
-            //return $result;
-        }
-        catch(PDOException $e)
-        {
-            echo "Error: " . $e->getMessage();
-        }
+                if (password_verify(trim($_POST['password']), $hash)) {
+                    // Correcte inlog
 
+                    //$result[0][2] = Check 'Role' field from users table
+                    if($result[0][2] == "Administrator") {
+                        $_SESSION['AdminLogin'] = $result;
+                        header('Location: /dashboard');
+                    }
+                    elseif($result[0][2] == "Verzorgende"){
+                        $_SESSION['VerzorgendeLogin'] = $result;
+                        header('Location: /dashboard');
+                    }
+                    elseif($result[0][2] == "Ouder"){
+                        $_SESSION['OuderLogin'] = $result;
+                        header('Location: /dashboard');
+                    }
+                    elseif($result[0][2] == "Kind"){
+                        $_SESSION['KindLogin'] = $result;
+                        header('Location: /dashboard');
+                    }
+
+
+                } else {
+                    // Vekeerd wachtwoord of gebruikersnaam
+                    echo " <script type=\"text/javascript\"> setTimeout(function(){ swal(\"Fout\", \"Gegevens niet gevonden, Probeer nogmaals.\", \"error\"); }, 500); </script>";
+                }
+
+            }
+            }
+            catch(PDOException $e)
+            {
+                echo "Error: " . $e->getMessage();
+            }
+
+        return $result;
     }
 
     public function removeFromUsersTable($table, $id)

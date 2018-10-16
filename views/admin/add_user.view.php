@@ -45,6 +45,14 @@
                         </div>
                         <div class="row mb-2">
                             <div class="col-md-4">
+                                <p>Wachtwoord</p>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="password" class="form-control" name="password">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-md-4">
                                 <p>Mobiele telefoon</p>
                             </div>
                             <div class="col-md-8">
@@ -53,18 +61,19 @@
                         </div>
                         <div class="row mb-2">
                             <div class="col-md-4">
-                                <p>Baan</p>
+                                <p>Rol</p>
                             </div>
                             <div class="col-md-8">
-                                <select id="" name="roleid" class="form-control">
-                                    <option value="1">Administrator</option>
-                                    <option value="2">Verzorgende</option>
-                                    <option value="3">Ouders</option>
-                                    <option value="4">Kind</option>
+                                <select id="" name="role" class="form-control">
+                                    <option value="Administrator">Administrator</option>
+                                    <option value="Verzorgende">Verzorgende</option>
+                                    <option value="Ouder"selected>Ouders</option>
+                                    <option value="Kind">Kind</option>
                                 </select>
                             </div>
                         </div>
                         <div class="row">
+                            <input type="hidden" value="1" name="active">
                             <div class="col-md-10"></div>
                             <div class="col-md-2" align="right">
                                 <input

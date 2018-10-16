@@ -7,8 +7,7 @@
  */
 
 //retrieve data
-//$table = "users";
-//$conditions = ["email", "password", "role", "active"];
+
 // Here I post the values to the function that makes connection to the database
 $values = [$_POST['email'], $_POST['password']];
 
@@ -18,3 +17,4 @@ $values = [$_POST['email'], $_POST['password']];
 $app['database']->LoginAs($values);
 
 require("views/login.view.php");
+
