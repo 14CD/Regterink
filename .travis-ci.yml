@@ -1,5 +1,0 @@
-language: php
-php:
-  - 7.2
-script:
-  - scp -r * 2018_P1_14@adsd.clow.nl:~2018_p1_14/P1_OOAPP_Opdracht/
