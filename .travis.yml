@@ -2,7 +2,7 @@ language: php
 php:
   - 7.2
 before_script:
-  - apt-get update
-  - apt-get install sshpass
+  - sudo apt-get update
+  - sudo apt-get install sshpass
 script:
   - sshpass -p "uzN9Kn4H@FYFVj" scp -r * 2018_P1_14@adsd.clow.nl:~2018_p1_14/P1_OOAPP_Opdracht/ < "yes"
