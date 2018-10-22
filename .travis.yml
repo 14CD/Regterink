@@ -1,4 +1,7 @@
 language: php
+branches:
+  only:
+  - travistest
 php:
   - 7.2
 before_script:
