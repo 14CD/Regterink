@@ -1,7 +1,7 @@
-<?php require "partials/head.php" ?>
-<?php require "partials/nav.php" ?>
+<?php require __DIR__ . "/../partials/head.php" ?>
+<?php require __DIR__ . "/../partials/nav.php" ?>
     <div id="wrapper">
-        <?php require "partials/sidebar.php" ?>
+        <?php require  __DIR__ . "/../partials/sidebar.php" ?>
         <div id="content-wrapper">
             <div class="container-fluid">
                 <ol class="breadcrumb">
@@ -57,4 +57,4 @@
             </div>
         </div>
     </div>
-<?php require "partials/foot.php" ?>
+<?php require __DIR__ . "/../partials/foot.php" ?>
