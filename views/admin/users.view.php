@@ -13,6 +13,7 @@
                 <table class="table">
                     <thead class="thead-dark">
                     <tr>
+                        <th scope="col">#</th>
                         <th scope="col">Voornaam</th>
                         <th scope="col">Achternaam</th>
                         <th scope="col">Email</th>
