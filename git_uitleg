@@ -9,3 +9,7 @@ git commit . -m "commit text"
 
 <! Uitgewerkte text pushen !>
 git push
+
+<! Inzien van alle bewerkte bestaande !>
+git status
+
