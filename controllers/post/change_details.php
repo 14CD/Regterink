@@ -24,4 +24,6 @@ $values = [
     $_POST['active'],
 ];
 
-die(var_dump($values));
+$app['database']->changeAccountDetails($table, $conditions, $values);
+
+header("Location: dashboard");

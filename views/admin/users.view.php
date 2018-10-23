@@ -16,8 +16,6 @@
                         <th scope="col">#</th>
                         <th scope="col">Voornaam</th>
                         <th scope="col">Achternaam</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Mobile</th>
                         <th scope="col">Rol</th>
                         <th scope="col"></th>
                     </tr>
@@ -38,6 +36,8 @@
                                 echo "<td scope='row'>Ouders</td>";
                             } elseif ($key == "roleid" && $value == 4) {
                                 echo "<td scope='row'>Kind</td>";
+                            } elseif ($key == "fname") {
+                                echo "<td><a href='user_details?id=$id' id='title'>" . ucfirst($value) . "</a></td>";
                             } else {
                                 echo "<td>" . $value . "</td>";
                             }

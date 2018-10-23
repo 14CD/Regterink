@@ -6,4 +6,10 @@
  * Time: 20:44
  */
 
+$id = $_GET['id'];
+
+$user = $app['database']->selectWhere("users", $id);
+
+//die(var_dump($user));
+
 require "views/admin/user_details.view.php";

@@ -26,7 +26,6 @@ $router->get('documents', 'controllers/get/documents/list_documents.php');
 
 $router->get('user_details', 'controllers/user_details.php');
 
-$router->post('/add_player', 'controllers/add_player.php');
 $router->post('post_add_user', 'controllers/post/add_user.php');
 $router->post('sendmail', 'controllers/post/send_mail.php');
 $router->post('change_details', 'controllers/post/change_details.php');

@@ -26,7 +26,7 @@ class QueryBuilder
 
     public function selectUsers($table)
     {
-        $statement = $this->pdo->prepare("SELECT `id`, `fname`, `lname`, `email`, `mobile`, `role` FROM {$table}");
+        $statement = $this->pdo->prepare("SELECT `id`, `fname`, `lname`, `role` FROM {$table}");
         $statement->execute();
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -34,6 +34,14 @@ class QueryBuilder
 
     public function selectNutures($table) {
         $statement = $this->pdo->prepare("SELECT * FROM {$table} WHERE role = 'Verzorgende'");
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function selectWhere($table, $id)
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM {$table} WHERE id = {$id}");
         $statement->execute();
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
