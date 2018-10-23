@@ -1,3 +1,7 @@
+* {
+    text-transform: lowercase;
+}
+
 html {
     position: relative;
     min-height: 100%;
