@@ -10,7 +10,7 @@
 
 return [
     'database' => [
-        'name' => 'db_regterink',
+        'name' => 'regterink',
         'username' => 'root',
         'password' => 'rootroot',
         'connection' => 'mysql:host=127.0.0.1',
