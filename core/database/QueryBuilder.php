@@ -59,6 +59,22 @@ class QueryBuilder
         $statement->execute();
     }
 
+    public function changeAccountDetails($table, $conditions, $values) {
+        $id = 1;
+
+        $statement = $this->pdo->prepare(
+            "UPDATE `{$table}` SET 
+              `{$conditions[0]}` = {$values[0]},
+              `{$conditions[1]}` = {$values[1]},
+              `{$conditions[2]}` = {$values[2]},
+              `{$conditions[3]}` = {$values[3]},
+              `{$conditions[4]}` = {$values[4]}
+              WHERE `id` = $id
+        ");
+
+        $statement->execute();
+    }
+
     public function LoginAs($values)
     {
         try {
