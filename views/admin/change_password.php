@@ -20,7 +20,7 @@ require 'partials/nav.php';
                     wachtwoord vergeten
                 </div>
                 <div class="card-body">
-                    <form action="" method="post">
+                    <form action="sendmail" method="post">
                         <div class="row mb-2">
                             <div class="col-md-4">
                                 Email:

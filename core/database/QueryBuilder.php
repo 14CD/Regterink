@@ -53,6 +53,12 @@ class QueryBuilder
         $statement->execute();
     }
 
+    public function passwordChange($table, $password, $email)
+    {
+        $statement = $this->pdo->prepare("UPDATE `{$table}` SET `password` = '{$password}' WHERE `email` = '{$email}'");
+        $statement->execute();
+    }
+
     public function LoginAs($values)
     {
         try {
