@@ -1,0 +1,11 @@
+<! Ophalen van de branch !>
+git pull
+
+<! Toevoegen van bewerkten en gemaakte bestanden ?>
+git add .
+
+<! Toevoegen van text voor in de branch !>
+git commit . -m "commit text"
+
+<! Uitgewerkte text pushen !>
+git push
