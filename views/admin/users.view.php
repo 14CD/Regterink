@@ -13,6 +13,7 @@
                 <table class="table">
                     <thead class="thead-dark">
                     <tr>
+                        <th scope="col">#</th>
                         <th scope="col">Voornaam</th>
                         <th scope="col">Achternaam</th>
                         <th scope="col">Email</th>
@@ -42,7 +43,7 @@
                             }
                         }
                         echo "
-                            <form action='post_remove_user' method='get'>
+                            <form action='post_remove_user' method='post'>
                                 <td>
                                     <input type='hidden' value='$id' name='id'>
                                     <input type='submit' class='btn btn-danger' value='Verwijder gebruiker'>

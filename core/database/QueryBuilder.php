@@ -26,7 +26,7 @@ class QueryBuilder
 
     public function selectUsers($table)
     {
-        $statement = $this->pdo->prepare("SELECT `fname`, `lname`, `email`, `mobile`, `role` FROM {$table}");
+        $statement = $this->pdo->prepare("SELECT `id`, `fname`, `lname`, `email`, `mobile`, `role` FROM {$table}");
         $statement->execute();
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);

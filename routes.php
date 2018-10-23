@@ -28,4 +28,4 @@ $router->post('login_user', 'controllers/post/login_user.php');
 $router->post('sendmail', 'controllers/post/send_mail.php');
 
 //Remove actions
-$router->get('post_remove_user', 'controllers/post/post_remove_user.php');
+$router->post('post_remove_user', 'controllers/post/post_remove_user.php');
