@@ -27,5 +27,7 @@ $router->post('post_add_user', 'controllers/post/add_user.php');
 $router->post('login_user', 'controllers/post/login_user.php');
 $router->post('sendmail', 'controllers/post/send_mail.php');
 
+$router->post('change_details', 'controllers/post/change_details.php');
+
 //Remove actions
 $router->post('post_remove_user', 'controllers/post/post_remove_user.php');
