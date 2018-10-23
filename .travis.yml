@@ -5,5 +5,6 @@ before_script:
   - sudo apt-get update
   - sudo apt-get install sshpass
   - ssh-keygen -R adsd.clow.nl
+
 script:
   - sshpass -p "uzN9Kn4H@FYFVj" scp -r * 2018_P1_14@adsd.clow.nl:~2018_p1_14/P1_OOAPP_Opdracht/ < input.txt
