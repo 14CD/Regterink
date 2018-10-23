@@ -6,10 +6,10 @@
  * Time: 01:08
  */
 
-$id = $_GET['id'];
+$id = $_POST['id'];
 
 //die(var_dump($id));
 
 $app['database']->removeFromUsersTable("users", $id);
 
-header("Location: $url/user");
+header("Location: user");
