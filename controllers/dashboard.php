@@ -8,4 +8,6 @@
 
 $users = $app['database']->selectAll('users');
 
+$nutures = $app['database']->selectNutures('users');
+
 require "views/admin/index.view.php";

@@ -18,11 +18,22 @@ class QueryBuilder
 
     public function selectAll($table)
     {
-        /**
-         * @var $statement all data for given table
-         * @var $intoClass define class for output
-         */
         $statement = $this->pdo->prepare("SELECT * FROM {$table}");
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function selectUsers($table)
+    {
+        $statement = $this->pdo->prepare("SELECT `fname`, `lname`, `email`, `mobile`, `role` FROM {$table}");
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function selectNutures($table) {
+        $statement = $this->pdo->prepare("SELECT * FROM {$table} WHERE role = 'Verzorgende'");
         $statement->execute();
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -43,7 +54,8 @@ class QueryBuilder
     }
 
     public function LoginAs($values)
-    {   try{
+    {
+        try {
             //SQL query being executed
             $statement = $this->pdo->prepare("SELECT email, password, role, active FROM users  WHERE email = '$values[0]' ");
             $statement->execute();
@@ -58,19 +70,16 @@ class QueryBuilder
                     // Correcte inlog
 
                     //$result[0][2] = Check 'Role' field from users table
-                    if($result[0][2] == "Administrator") {
+                    if ($result[0][2] == "Administrator") {
                         $_SESSION['AdminLogin'] = $result;
                         header('Location: /dashboard');
-                    }
-                    elseif($result[0][2] == "Verzorgende"){
+                    } elseif ($result[0][2] == "Verzorgende") {
                         $_SESSION['VerzorgendeLogin'] = $result;
                         header('Location: /dashboard');
-                    }
-                    elseif($result[0][2] == "Ouder"){
+                    } elseif ($result[0][2] == "Ouder") {
                         $_SESSION['OuderLogin'] = $result;
                         header('Location: /dashboard');
-                    }
-                    elseif($result[0][2] == "Kind"){
+                    } elseif ($result[0][2] == "Kind") {
                         $_SESSION['KindLogin'] = $result;
                         header('Location: /dashboard');
                     }
@@ -82,11 +91,9 @@ class QueryBuilder
                 }
 
             }
-            }
-            catch(PDOException $e)
-            {
-                echo "Error: " . $e->getMessage();
-            }
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
 
         return $result;
     }
