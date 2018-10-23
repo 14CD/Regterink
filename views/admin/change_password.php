@@ -20,47 +20,47 @@ require 'partials/nav.php';
                     wachtwoord vergeten
                 </div>
                 <div class="card-body">
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            Email:
-                        </div>
-                        <div class="col-md-8">
-                            <input type="email" value="test@test.test" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            Oude wachtwoord:
-                        </div>
-                        <div class="col-md-8">
-                            <input type="password" value="********" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            Gewenste wachtwoord:
-                        </div>
-                        <div class="col-md-8">
-                            <input type="password" value="" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            Herhaal gewenste wachtwoord:
-                        </div>
-                        <div class="col-md-8">
-                            <input type="password" value="" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row mb-2">
-                        <div class="col-md-12">
-                            <div class="align" align="right">
-                                <form action="" method="post">
-                                    <input type="submit" value="Klik" class="btn btn-primary">
-                                </form>
+                    <form action="" method="post">
+                        <div class="row mb-2">
+                            <div class="col-md-4">
+                                Email:
+                            </div>
+                            <div class="col-md-8">
+                                <input type="email" name="email" value="test@test.test" class="form-control">
                             </div>
                         </div>
-                    </div>
+                        <div class="row mb-2">
+                            <div class="col-md-4">
+                                Oude wachtwoord:
+                            </div>
+                            <div class="col-md-8">
+                                <input type="password" value="********" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-md-4">
+                                Gewenste wachtwoord:
+                            </div>
+                            <div class="col-md-8">
+                                <input type="password" value="" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-md-4">
+                                Herhaal gewenste wachtwoord:
+                            </div>
+                            <div class="col-md-8">
+                                <input type="password" name="password" value="" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-md-12">
+                                <div class="align" align="right">
+                                    <input type="submit" value="Klik" class="btn btn-primary">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
