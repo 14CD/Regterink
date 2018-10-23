@@ -7,4 +7,4 @@
  */
 
 
-require 'views/admin/forgot_password.view.php';
+require 'views/admin/change_password.php';

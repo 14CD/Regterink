@@ -29,9 +29,11 @@
                         <div class="card text-white bg-warning o-hidden h-100">
                             <div class="card-body">
                                 <div class="card-body-icon">
-                                    <i class="fas fa-fw fa-list"></i>
+                                    <i class="fas fa-fw fa-heart"></i>
                                 </div>
-                                <div class="mr-5">11 New Tasks!</div>
+                                <div class="mr-5">
+                                    U heeft <?php echo count($nutures) ?> verzorgende in uw systeem staan!
+                                </div>
                             </div>
                         </div>
                     </div>
