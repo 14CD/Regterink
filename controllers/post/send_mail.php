@@ -6,21 +6,28 @@
  * Time: 15:12
  */
 
-$email = $_POST['email'];
-$password = $_POST['password'];
+try {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-// the message
-$msg = "U wachtwoord is aangepast!
+    // the message
+    $msg = "U wachtwoord is aangepast!
+    
+    U heeft uw wachtwoord aangepast voor vandaag.
+    
+    Met vriendelijke groet,
+    ";
 
-U heeft uw wachtwoord aangepast voor vandaag.
+    // use wordwrap() if lines are longer than 70 characters
+    $msg = wordwrap($msg, 70);
 
-Met vriendelijke groet,
-";
+    // send email
+    mail($email, "Wachtwoord aangepast", $msg);
 
-// use wordwrap() if lines are longer than 70 characters
-$msg = wordwrap($msg,70);
+    //database change
+    $app['database']->passwordChange("users", password_hash($password, PASSWORD_DEFAULT), $email);
 
-// send email
-mail($email,"Wachtwoord aangepast", $msg);
-
-//database change
+    header("Location: dashboard");
+} catch (Exception $e) {
+    header("Location: dashboard");
+}
