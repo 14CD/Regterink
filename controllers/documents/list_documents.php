@@ -6,4 +6,4 @@
  * Time: 15:38
  */
 
-require
+require 'views/admin/documents/list_documents.view.php';
