@@ -22,7 +22,7 @@
             <span>Kinderen (Klanten)</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="documents">
             <i class="fas fa-fw fa-folder"></i>
             <span>Documenten</span></a>
     </li>

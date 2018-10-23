@@ -11,9 +11,9 @@
 return [
     'database' => [
         'name' => 'regterink',
-        'username' => 'root',
-        'password' => 'rootroot',
-        'connection' => 'mysql:host=127.0.0.1',
+        'username' => 'regterink',
+        'password' => 'regterink',
+        'connection' => 'mysql:host=regterink-mysql',
         'options' => [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
         ]
