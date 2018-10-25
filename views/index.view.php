@@ -15,9 +15,6 @@
                         <a class="nav-link js-scroll-trigger" href="#about">Over ons</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#services">Onze service</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -45,7 +42,7 @@
         </div>
     </header>
 
-    <section id="services" class="line">
+    <section id="about" class="line">
         <div class="jumbotron">
             <div class="container">
                 <h1>Over ons</h1>
@@ -158,7 +155,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div id="contact" class="col-md-4">
                         <h3>Contact</h3>
                         <form action="" method="POST">
                             <div class="row mb-2">

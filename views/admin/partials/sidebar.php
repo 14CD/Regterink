@@ -14,12 +14,18 @@
     <li class="nav-item">
         <a class="nav-link" href="nuturing">
             <i class="fas fa-fw fa-heart"></i>
-            <span>Verzorgers</span></a>
+            <span>voor Verzorgers</span></a>
+    </li>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="nuturing">
+            <i class="fas fa-fw fa-heart"></i>
+            <span>voor Ouders</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="children">
             <i class="fas fa-fw fa-child"></i>
-            <span>Kinderen (Klanten)</span></a>
+            <span>voor Kinderen</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="documents">
