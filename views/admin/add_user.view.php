@@ -79,7 +79,7 @@
                                 <input
                                     type="submit"
                                     class="form-control"
-                                    value="Klik"
+                                    value="Bevestig"
                                 />
                             </div>
                         </div>
