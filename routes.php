@@ -25,6 +25,7 @@ $router->get('nuturing', 'controllers/nuturing.php');
 $router->get('documents', 'controllers/get/documents/list_documents.php');
 
 $router->get('user_details', 'controllers/user_details.php');
+$router->get('child_details', 'controllers/child_details.php');
 
 $router->post('post_add_user', 'controllers/post/add_user.php');
 $router->post('sendmail', 'controllers/post/send_mail.php');

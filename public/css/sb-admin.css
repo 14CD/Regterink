@@ -1,5 +1,7 @@
 * {
     text-transform: lowercase;
+    margin: 0;
+    padding: 0;
 }
 
 html {
