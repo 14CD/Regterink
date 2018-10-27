@@ -34,7 +34,7 @@
                             met kinderen
                             met gedragsproblemen. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae,
                             quos?</p>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger line" href="#about">Bekijk jou
+                        <a class="btn btn-primary btn-xl js-scroll-trigger line" href="#contact">Bekijk jou
                             mogelijkheden</a>
                     </div>
                 </div>
@@ -115,6 +115,10 @@
                 </div>
             </div>
         </div>
+    </section>
+    <!-- the map by the footer -->
+    <section id='map' class="line">
+        <?php require 'partials/map.php'; ?>
     </section>
 
     <section id="footer" class="line">
