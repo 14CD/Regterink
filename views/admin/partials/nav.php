@@ -12,7 +12,7 @@
                 <a class="dropdown-item" href="add_user">Nieuw account</a>
                 <a class="dropdown-item" href="new_password">Nieuw wachtwoord</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Loguit</a>
+                <a class="dropdown-item" href="/logout">Loguit</a>
             </div>
         </li>
     </ul>

@@ -17,5 +17,12 @@
     <link href="public/css/sb-admin.css" rel="stylesheet">
     <!-- Sweet alert-->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <?php if (!isset($_SESSION)) { session_start(); } ?>
+    <?php if (!isset($_SESSION['AdminLogin']) && !isset($_SESSION['VerzorgendeLogin']) && !isset($_SESSION['OuderLogin']) && !isset($_SESSION['KindLogin'])) {
+        //header('Location: /~2018_p1_14/P1_OOAPP_Opdracht/');
+        header('Location: /');
+    }?>
+    <?php print_r($_SESSION); ?>
 </head>
 <body id="page-top">
