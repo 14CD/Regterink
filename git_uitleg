@@ -13,3 +13,5 @@ git push
 <! Inzien van alle bewerkte bestaande !>
 git status
 
+<! Laatst gepushte werk inzien (met q kan je uit de terminal)!>
+git log
