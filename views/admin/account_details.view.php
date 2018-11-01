@@ -50,18 +50,28 @@
                                                 <input id="mobiel" type="number" class="form-control" value="" name="mobiel">
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>Rol:</td>
-                                            <td>
-                                                <select id="" name="role" class="form-control" name="role">
-                                                    <option id="curr_select" value="" selected></option>
-                                                    <option value="Administrator">Administrator</option>
-                                                    <option value="Verzorgende">Verzorgende</option>
-                                                    <option value="Ouder">Ouders</option>
-                                                    <option value="Kind">Kind</option>
-                                                </select>
-                                            </td>
-                                        </tr>
+                                        <?php
+                                            if ($_SESSION['VerzorgendeLogin'] || $_SESSION['OuderLogin'] || $_SESSION['KindLogin'])
+                                            {
+
+                                            }
+                                            else {
+                                                ?>
+                                                    <tr>
+                                                        <td>Rol:</td>
+                                                        <td>
+                                                            <select id="" name="role" class="form-control" name="role">
+                                                                <option id="curr_select" value="" selected></option>
+                                                                <option value="Administrator">Administrator</option>
+                                                                <option value="Verzorgende">Verzorgende</option>
+                                                                <option value="Ouder">Ouders</option>
+                                                                <option value="Kind">Kind</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                <?php
+                                            }
+                                        ?>
                                         <input id="id" type="hidden" value="" name="id">
                                         <input id="active" type="hidden" value="" name="active">
                                         </tbody>

@@ -1,16 +1,16 @@
 <ul class="sidebar navbar-nav">
     <li class="nav-item">
-        <a class="nav-link" href="#" style="padding-bottom: 0;">
+        <a class="nav-link" href="account_details" style="padding-bottom: 0;">
             <span>
                 <?php
                     if ($_SESSION['AdminLogin']) {
-                        echo "Welkom: " . $_SESSION['AdminLogin'][0][1];
+                        echo "Welkom: " . ucfirst($_SESSION['AdminLogin'][0][1]);
                     } else if ($_SESSION['VerzorgendeLogin']) {
-                        echo "Welkom: " . $_SESSION['VerzorgendeLogin'][0][1];
+                        echo "Welkom: " . ucfirst($_SESSION['VerzorgendeLogin'][0][1]);
                     } else if ($_SESSION['OuderLogin']) {
-                        echo "Welkom: " . $_SESSION['OuderLogin'][0][1];
+                        echo "Welkom: " . ucfirst($_SESSION['OuderLogin'][0][1]);
                     } else if ($_SESSION['KindLogin']) {
-                        echo "Welkom: " . $_SESSION['KindLogin'][0][1];
+                        echo "Welkom: " . ucfirst($_SESSION['KindLogin'][0][1]);
                     }
                 ?>
                 <hr style="background-color: white;">
@@ -18,7 +18,7 @@
         </a>
     </li>
     <?php if(isset($_SESSION['AdminLogin'])) : ?>
-        <li class="nav-item">
+    <li class="nav-item">
         <a class="nav-link" href="dashboard">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
@@ -33,17 +33,17 @@
     <li class="nav-item">
         <a class="nav-link" href="nuturing">
             <i class="fas fa-fw fa-heart"></i>
-            <span>voor Verzorgers</span></a>
+            <span>Verzorgers</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="nuturing">
-            <i class="fas fa-fw fa-heart"></i>
-            <span>voor Ouders</span></a>
+            <i class="fas fa-fw fa-people-carry"></i>
+            <span>Ouders</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="children">
             <i class="fas fa-fw fa-child"></i>
-            <span>voor Kinderen</span></a>
+            <span>Kinderen</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="documents">
