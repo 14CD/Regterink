@@ -105,7 +105,7 @@ class QueryBuilder
         }
         //Check if user exists
         if (isset($result[0])) {
-
+            $_SESSION['id'] = $result[0][0];
             if (password_verify(trim($_POST['password']), $hash)) {
                 // Correcte inlog
 
@@ -188,11 +188,9 @@ class QueryBuilder
         echo "Error: " . $e->getMessage();
     }
 
-
     }
 
     public function Account_info_change($values){
-
         try{
             //SQL query being executed
             $statement = $this->pdo->prepare("UPDATE users SET fname = '$values[0]', lname = '$values[1]', email = '$values[2]', mobile= '$values[3]', role = '$values[4]', active = '$values[6]'  WHERE id = '$values[5]'");
@@ -214,10 +212,13 @@ class QueryBuilder
         $this->pdo->exec($sql);
     }
 
+
     public function numberOfRows()
     {
         //retrieve amount of rows from users db
         $result = $this->pdo->prepare("SELECT * FROM users");
         return $result = $result->execute();
     }
+
+
 }
