@@ -168,15 +168,10 @@ class QueryBuilder
 
     }
 
-<<<<<<< HEAD
-    public function Account_info_change($values){
-        try{
-=======
     public function Account_info_change($values)
     {
 
         try {
->>>>>>> 083d9cde1a740cae2a06bdf3e0cdde3267a3d70c
             //SQL query being executed
             $statement = $this->pdo->prepare("UPDATE users SET fname = '$values[0]', lname = '$values[1]', email = '$values[2]', mobile= '$values[3]', role = '$values[4]', active = '$values[6]'  WHERE id = '$values[5]'");
             $statement->execute();
