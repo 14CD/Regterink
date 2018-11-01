@@ -1,14 +1,10 @@
 <?php require "partials/head.php" ?>
 <?php require "partials/nav.php" ?>
 <?php
-//$array_key contains the name of the Session and $array_keys contains the trimmed name of the session
-$array_key = array_keys($_SESSION);
-$array_keys = trim($array_key[0]);
-
-//Current user ID
-$id= $_SESSION[$array_keys][0][0];
-$app['database']->Get_current_Account_info($id);
-$profilePicture = $app['database']->selectWhere("users", $id);
+    //Waarom doe je dit hier Jeffrey? en ik heb wat weg gehaald omdat het niet werkte
+    $id = $_SESSION["id"];
+    $app['database']->Get_current_Account_info($id);
+    $profilePicture = $app['database']->selectWhere("users", $_SESSION["id"]);
 ?>
     <div id="wrapper">
         <?php require "partials/sidebar.php" ?>
