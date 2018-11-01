@@ -51,6 +51,14 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function selectSpecificRules($table, $where)
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM `{$table}` WHERE `role` = '{$where}'");
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function selectAllChildren($table)
     {
         $statement = $this->pdo->prepare("SELECT * FROM {$table} WHERE `role` = 'Kind'");

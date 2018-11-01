@@ -148,6 +148,10 @@ header.masthead p {
     box-shadow: 0 0 0 .2rem rgba(240, 95, 64, .5) !important;
 }
 
+.jumbotron {
+    margin-bottom: 0;
+}
+
 #footer .jumbotron {
     margin-bottom: 0
 }

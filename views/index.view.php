@@ -63,54 +63,26 @@
                     </div>
 
                     <div class="row mt-4">
-                        <div class="col-md-3">
-                            <div class="card mb-4 line">
-                                <img class="img-fluid img-responsive" src="public/images/mens1.jpg"/>
-                                <div class="card-body">
-                                    <h4 class="card-text">Mitchell Regterink</h4>
-                                    <h6 class="card-text"><i>Eigenaar</i></h6>
-                                    <p class="card-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, maxime.
-                                    </p>
+                        <?php
+                        foreach ($administrators as $admin) {
+                            ?>
+                            <div class="col-md-3">
+                                <div class="card mb-4 line">
+                                    <img class="img-fluid img-responsive"
+                                         src="public/images/profile/<?php echo $admin['file'] ?>"/>
+                                    <div class="card-body">
+                                        <h4 class="card-text"><?php echo $admin['fname'] . " " . $admin['lname'] ?></h4>
+                                        <h6 class="card-text"><i><?php echo $admin['role'] ?></i></h6>
+                                        <p class="card-text">
+                                            Wilt u een afspraak? U kunt mij bereiken op het email adres <i><?php echo $admin['email'] ?></i><br />
+                                            Dit geld ook voor mijn collega's.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card mb-4 line">
-                                <img class="img-fluid img-responsive" src="public/images/mens2.jpg"/>
-                                <div class="card-body">
-                                    <h4 class="card-text">Ruben Van der Meer</h4>
-                                    <h6 class="card-text"><i>Verzorgende</i></h6>
-                                    <p class="card-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, maxime.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card mb-4 line">
-                                <img class="img-fluid img-responsive" src="public/images/mens3.jpg"/>
-                                <div class="card-body">
-                                    <h4 class="card-text">Willem van Bethlehem</h4>
-                                    <h6 class="card-text"><i>Verzorgende</i></h6>
-                                    <p class="card-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, maxime.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card mb-4 line">
-                                <img class="img-fluid img-responsive" src="public/images/mens4.jpg"/>
-                                <div class="card-body">
-                                    <h4 class="card-text">Jake Van der Houten</h4>
-                                    <h6 class="card-text"><i>Notulist</i></h6>
-                                    <p class="card-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, maxime.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
