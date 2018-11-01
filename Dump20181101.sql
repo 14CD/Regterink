@@ -213,8 +213,9 @@ CREATE TABLE `users` (
   `password` varchar(256) NOT NULL,
   `role` varchar(128) NOT NULL,
   `active` int(11) NOT NULL DEFAULT '0',
+  `file` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -223,7 +224,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (77,'Aaron','Weggemans','aaronweggemans@hotmail.nl','+31 (0) 6 11234567','$2y$10$f4H0mDqPANrDuXAArh2JROS6OdIFOusE3hnYcnw4XO96.xNumvxfa','administrator',1),(78,'Onno','Kasanmoenntalib','onnokasanmoentalib@hotmail.nl','+31 (0) 6 98374833','$2y$10$j2NqbSUnjzzmBh44Z3EvQO3j256W4DoHgFupPo53eeqndvakluTrG','administrator',1),(79,'rebien','hussein','rebienhussein@hotmail.nl','+31 (0) 6 38473993','$2y$10$j2NqbSUnjzzmBh44Z3EvQO3j256W4DoHgFupPo53eeqndvakluTrG','administrator',1),(82,'Mitchell','Van zant','mitchell@vanzant.com','0631234504','$2y$10$uuTTBJ7.grmdJdiaH2FhMOD90g4M4HOcqynLc5uc4/AncXaGlSKRy','Verzorgende',1),(84,'test','test','test@test.nl','0631234504','$2y$10$3vZwTHQ8Ao03ic2ilaRwuOVxAe3xQXIp7z2yYIK7KddKPByyOWCD.','Administrator',1),(85,'Chantal','van plas','chantal','0631234504','$2y$10$KqCfSaadHf68zceNapFEQ.9rYeI3B0B8SPkuiHSNqeLrAf13eWVU6','Kind',1),(86,'Jan','Kreeft','Jankreeft@hotmail.nl','0631234504','$2y$10$ZgAMoV7E.duWhnThrqDZnuPE4wLUspZRYSSGDtc62tfQyaiuvuXN6','Kind',1);
+INSERT INTO `users` VALUES (87,'aaron','weggemans','aaronweggemans@hotmail.nl','0631234504','$2y$10$RVn5I.t.L1hTy1lz2DevcuswwuiuQCUbc4lXWmnN0sBwNiC5VEd/u','Administrator',1,'3869 aangepast.png'),(89,'Onno','Kassanmantoelib','qaxoqigac@mailinator.net','44','$2y$10$sJ3/pZ4/rFoIbUrWWMeGAuDYByoXMnY8qAJUpwZtxic0o/scmynkW','Kind',1,NULL),(91,'test','test','test@test.nl','29340','$2y$10$kh8WL7n1ohNtAcR1zdeKrOLPTZ0dIrntv1u8NR1qV.E/GE15auE9.','Kind',1,'Screenshot_20180216-200521.png'),(92,'Yorin','Meijerink','yorinmeijerink@hotmail.nl','13','$2y$10$quH1zMHy3AA8RBbKksNKIOonkXdq6poGaf9JNQbQVAQdsNamUTYLK','Kind',1,'Screenshot_20180127-115019.png');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -236,4 +237,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-29 13:58:15
+-- Dump completed on 2018-11-01 19:55:44
