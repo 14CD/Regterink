@@ -8,6 +8,7 @@ $array_keys = trim($array_key[0]);
 //Current user ID
 $id= $_SESSION[$array_keys][0][0];
 $app['database']->Get_current_Account_info($id);
+$profilePicture = $app['database']->selectWhere("users", $id);
 ?>
     <div id="wrapper">
         <?php require "partials/sidebar.php" ?>
@@ -24,7 +25,7 @@ $app['database']->Get_current_Account_info($id);
                         Uw gegevens
                     </div>
                     <div class="card-body">
-                        <form action="Account_info_change" method="post">
+                        <form action="Account_info_change" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-8">
                                     <table class="table table-striped">
@@ -42,13 +43,13 @@ $app['database']->Get_current_Account_info($id);
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>email:</td>
+                                            <td>Email:</td>
                                             <td>
                                                 <input id="email" type="text" class="form-control" value="" name="email">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>mobiel:</td>
+                                            <td>Mobiel:</td>
                                             <td>
                                                 <input id="mobiel" type="number" class="form-control" value="" name="mobiel">
                                             </td>
@@ -71,10 +72,19 @@ $app['database']->Get_current_Account_info($id);
                                     </table>
                                 </div>
                                 <div class="col-md-4">
-                                    <img src="https://images-na.ssl-images-amazon.com/images/S/sgp-catalog-images/region_US/wb-883316843024-Full-Image_GalleryBackground-en-US-1483994511403._RI_SX940_.jpg"
+                                    <img src="/public/images/profile/<?php echo $profilePicture[0]['file']?>"
                                          alt="" class="img-thumbnail">
+
+                                    <div class="col-md-12 mt-2">
+                                        <div class="mt-2 mb-2">
+                                            Verander profiel foto?
+                                        </div>
+                                        <input type="file" name="profilePicture" id="profilePicture" class="form-control-file">
+                                    </div>
                                 </div>
-                                <input class="btn btn-primary" type="submit" value="Submit">
+                                <div class="align" align="right">
+                                    <input class="btn btn-primary" type="submit" value="Submit">
+                                </div>
                             </div>
                         </form>
                     </div>

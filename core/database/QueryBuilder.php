@@ -175,10 +175,9 @@ class QueryBuilder
 
     public function Account_info_change($values)
     {
-
         try {
             //SQL query being executed
-            $statement = $this->pdo->prepare("UPDATE users SET fname = '$values[0]', lname = '$values[1]', email = '$values[2]', mobile= '$values[3]', role = '$values[4]', active = '$values[6]'  WHERE id = '$values[5]'");
+            $statement = $this->pdo->prepare("UPDATE users SET fname = '$values[0]', lname = '$values[1]', email = '$values[2]', mobile= '$values[3]', role = '$values[4]', active = '$values[6]', file = '$values[7]'  WHERE id = '$values[5]'");
             $statement->execute();
 
             return true;
@@ -186,7 +185,6 @@ class QueryBuilder
             echo "Error: " . $e->getMessage();
             return false;
         }
-
     }
 
     public function removeFromUsersTable($table, $id)
