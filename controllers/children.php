@@ -6,6 +6,6 @@
  * Time: 11:46
  */
 
-$children = $app['database']->selectAllChildren("users");
+$children = $app['database']->selectSpecificRules("users", "Kind");
 
 require 'views/admin/children.view.php';
