@@ -17,12 +17,14 @@
             </span>
         </a>
     </li>
-    <li class="nav-item">
+    <?php if(isset($_SESSION['AdminLogin'])) : ?>
+        <li class="nav-item">
         <a class="nav-link" href="dashboard">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
         </a>
     </li>
+
     <li class="nav-item">
         <a class="nav-link" href="user">
             <i class="fas fa-fw fa-users"></i>
@@ -48,4 +50,17 @@
             <i class="fas fa-fw fa-folder"></i>
             <span>Documenten</span></a>
     </li>
+    <?php elseif (isset($_SESSION['KindLogin'])) : ?>
+    <li class="nav-item">
+        <a class="nav-link" href="documents">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Mijn Documenten</span></a>
+    </li>
+    <?php elseif(isset($_SESSION['VerzorgendeLogin'])) : ?>
+    <li class="nav-item">
+        <a class="nav-link" href="documents">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Mijn Documenten</span></a>
+    </li>
+    <?php endif; ?>
 </ul>

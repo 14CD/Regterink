@@ -80,54 +80,50 @@ class QueryBuilder
     }
 
     public function LoginAs($values)
-    {
-        try {
-            //SQL query being executed
-            $statement = $this->pdo->prepare("SELECT * FROM users WHERE email = '$values[0]' ");
-            $statement->execute();
-            $result = $statement->fetchAll(PDO::FETCH_NUM);
-
-            if ($result) {
-                //Hashed password from database
-                $hash = $result[0][5];
-            }
-            //Check if user exists
-            if (isset($result[0])) {
-
-                if (password_verify(trim($_POST['password']), $hash)) {
-                    // Correcte inlog
-
-                    //$result[0][6] = Check 'Role' field from users table
-                    if ($result[0][6] == "Administrator") {
-
-                        $_SESSION['AdminLogin'] = $result;
-                        //print_r($_SESSION);
-                        header('Location: /dashboard');
-                    } elseif ($result[0][6] == "Verzorgende") {
-                        $_SESSION['VerzorgendeLogin'] = $result;
-                        header('Location: /dashboard');
-                    } elseif ($result[0][6] == "Ouder") {
-                        $_SESSION['OuderLogin'] = $result;
-                        header('Location: /dashboard');
-                    } elseif ($result[0][6] == "Kind") {
-                        $_SESSION['KindLogin'] = $result;
-                        header('Location: /dashboard');
-                    }
-
-
-                } else {
-                    // Vekeerd wachtwoord of gebruikersnaam
-                    echo " <script type=\"text/javascript\"> setTimeout(function(){ swal(\"Fout\", \"Gegevens niet gevonden, Probeer nogmaals.\", \"error\"); }, 500); </script>";
+    {   try{
+        //SQL query being executed
+        $statement = $this->pdo->prepare("SELECT * FROM users WHERE email = '$values[0]' ");
+        $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_NUM);
+        if($result){
+            //Hashed password from database
+            $hash = $result[0][5];
+        }
+        //Check if user exists
+        if (isset($result[0])) {
+            $_SESSION['id'] = $result[0][0];
+            if (password_verify(trim($_POST['password']), $hash)) {
+                // Correcte inlog
+                //$result[0][6] = Check 'Role' field from users table
+                if($result[0][6] == "Administrator") {
+                    $_SESSION['AdminLogin'] = $result;
+                    //print_r($_SESSION);
+                    header('Location: /dashboard');
                 }
-
+                elseif($result[0][6] == "Verzorgende"){
+                    $_SESSION['VerzorgendeLogin'] = $result;
+                    header('Location: /dashboard');
+                }
+                elseif($result[0][6] == "Ouder"){
+                    $_SESSION['OuderLogin'] = $result;
+                    header('Location: /dashboard');
+                }
+                elseif($result[0][6] == "Kind"){
+                    $_SESSION['KindLogin'] = $result;
+                    header('Location: /dashboard');
+                }
             } else {
+                // Vekeerd wachtwoord of gebruikersnaam
                 echo " <script type=\"text/javascript\"> setTimeout(function(){ swal(\"Fout\", \"Gegevens niet gevonden, Probeer nogmaals.\", \"error\"); }, 500); </script>";
             }
-
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
+        }else{
+            echo " <script type=\"text/javascript\"> setTimeout(function(){ swal(\"Fout\", \"Gegevens niet gevonden, Probeer nogmaals.\", \"error\"); }, 500); </script>";
         }
-
+    }
+    catch(PDOException $e)
+    {
+        echo "Error: " . $e->getMessage();
+    }
         return $result;
     }
 
@@ -170,7 +166,6 @@ class QueryBuilder
             echo "Error: " . $e->getMessage();
         }
 
-
     }
 
     public function Account_info_change($values)
@@ -193,10 +188,13 @@ class QueryBuilder
         $this->pdo->exec($sql);
     }
 
+
     public function numberOfRows()
     {
         //retrieve amount of rows from users db
         $result = $this->pdo->prepare("SELECT * FROM users");
         return $result = $result->execute();
     }
+
+
 }

@@ -1,10 +1,10 @@
 <?php
-require '../partials/head.php';
-require '../partials/nav.php';
+require __DIR__ . '/../partials/head.php';
+require __DIR__ .  '/../partials/nav.php';
 ?>
 <div id="wrapper">
     <?php
-    require '../partials/sidebar.php';
+    require __DIR__ . '/../partials/sidebar.php';
 
     ?>
     <div id="content-wrapper">
@@ -13,17 +13,17 @@ require '../partials/nav.php';
                 <li class="breadcrumb-item">
                     Dashboard
                 </li>
-                <li class="breadcrumb-item active">kinderen</li>
+                <li class="breadcrumb-item active">documenten</li>
             </ol>
 
             <div class="card mb-3">
                 <div class="card-header">
-                    kinderen
+                    documenten
                 </div>
                 <div class="card-body">
                     <?php
-                    foreach ($children as $child) {
-                        $id = $child['id'];
+                    foreach ($documents as $document) {
+                        $id = $document['id'];
                         ?>
                         <div class="card" style="float: left; width: 20rem; margin: 2%;">
                             <img class="card-img-top"
@@ -31,10 +31,10 @@ require '../partials/nav.php';
                                  alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    <?php echo $child['fname'] . " " . $child['lname'] ?>
+                                    <?php echo $document['fname'] . " " . $child['lname'] ?>
                                 </h5>
                                 <p class="card-text">
-                                    <?php echo $child['email'] ?>
+                                    <?php echo $document['email'] ?>
                                 </p>
                                 <a href='child_details?id=<?php echo $id ?>' class="btn btn-primary">Zie gegevens in</a>
                             </div>
@@ -49,5 +49,5 @@ require '../partials/nav.php';
 </div>
 </div>
 <?php
-require __DIR__ . '../partials/foot.php';
+require __DIR__ . '/../partials/foot.php';
 ?>
