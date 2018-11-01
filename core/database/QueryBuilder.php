@@ -71,6 +71,26 @@ class QueryBuilder
         $statement->execute();
     }
 
+    public function addChildDetails($id, $table, $conditions, $values) {
+        if(empty($this->selectWhere("profiles_kids", $id)) || $this->selectWhere("profiles_kids", $id) == NULL)
+        {
+            $conditionsArray = implode(", ", array_map(function ($str) {
+                return sprintf("`%s`", $str);
+            }, $conditions));
+
+            $valuesArray = implode(", ", array_map(function ($value) {
+                return sprintf("'%s'", $value);
+            }, $values));
+
+            $statement = $this->pdo->prepare("INSERT INTO {$table} ($conditionsArray) VALUES ($valuesArray)");
+            $statement->execute();
+        }
+        else {
+            $stmnt = $this->pdo->prepare("UPDATE $table SET reason = $conditions[3], comment = $conditions[5] WHERE id = $id;");
+            $stmnt->execute();
+        }
+    }
+
     public function passwordChange($table, $password, $email)
     {
         $statement = $this->pdo->prepare("UPDATE `{$table}` SET `password` = '{$password}' WHERE `email` = '{$email}'");
@@ -182,13 +202,10 @@ class QueryBuilder
         $this->pdo->exec($sql);
     }
 
-
     public function numberOfRows()
     {
         //retrieve amount of rows from users db
         $result = $this->pdo->prepare("SELECT * FROM users");
         return $result = $result->execute();
     }
-
-
 }

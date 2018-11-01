@@ -80,9 +80,7 @@
                                         <p>Reden van plaatsing</p>
                                     </div>
                                     <div class="col-md-7">
-                                    <textarea name="reason" id="" cols="30" rows="5" class="form-control">
-
-                                    </textarea>
+                                        <textarea name="reason" id="" cols="30" rows="5" class="form-control"><?php echo $childDetails[0]['reason'] ?></textarea>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -90,9 +88,7 @@
                                         <p>Eventuele text</p>
                                     </div>
                                     <div class="col-md-7">
-                                    <textarea name="comment" id="" cols="30" rows="5" class="form-control">
-
-                                    </textarea>
+                                        <textarea name="comment" id="" cols="30" rows="5" class="form-control"><?php echo $childDetails[0]['comment'] ?></textarea>
                                     </div>
                                 </div>
                                 <div class="row mb-3">

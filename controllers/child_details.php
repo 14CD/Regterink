@@ -9,5 +9,6 @@
 $id = $_GET['id'];
 
 $child = $app['database']->selectWhere("users", $id);
+$childDetails = $app['database']->selectWhere("profiles_kids", $id);
 
 require "views/admin/child_details.view.php";
