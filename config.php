@@ -10,10 +10,10 @@
 
 return [
     'database' => [
-        'name' => '2018_p1_14_regterink',
-        'username' => 'root',
-        'password' => '',
-        'connection' => 'mysql:host=127.0.0.1',
+        'name' => 'regterink',
+        'username' => 'regterink',
+        'password' => 'regterink',
+        'connection' => 'mysql:host=regterink-mysql',
         'options' => [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
         ]

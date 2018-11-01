@@ -14,7 +14,7 @@ $router->get('', 'controllers/index.php');
 $router->get('home', 'controllers/index.php');
 
 $router->post('login_user', 'controllers/post/login_user.php');
-
+$router->get('pdf', 'controllers/get/pdftest.php');
 $router->get('new_password', 'controllers/change_password.php');
 $router->get('children', 'controllers/children.php');
 $router->get('dashboard', 'controllers/dashboard.php');
