@@ -14,7 +14,9 @@ class QueryBuilder
     public function __construct(PDO $pdo)
     {
         $this->pdo = $pdo;
-        if (!isset($_SESSION)) { session_start(); }
+        if (!isset($_SESSION)) {
+            session_start();
+        }
     }
 
     public function selectAll($table)
@@ -33,7 +35,8 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function selectNutures($table) {
+    public function selectNutures($table)
+    {
         $statement = $this->pdo->prepare("SELECT * FROM {$table} WHERE role = 'Verzorgende'");
         $statement->execute();
 
@@ -76,29 +79,12 @@ class QueryBuilder
         $statement->execute();
     }
 
-//    public function changeAccountDetails($table, $conditions, $values) {
-//        $id = 1;
-//
-//        $statement = $this->pdo->prepare(
-//            "UPDATE `{$table}` SET
-//              `{$conditions[0]}` = {$values[0]},
-//              `{$conditions[1]}` = {$values[1]},
-//              `{$conditions[2]}` = {$values[2]},
-//              `{$conditions[3]}` = {$values[3]},
-//              `{$conditions[4]}` = {$values[4]}
-//              WHERE `id` = $id
-//        ");
-//
-//        $statement->execute();
-//    }
-
     public function LoginAs($values)
     {   try{
         //SQL query being executed
         $statement = $this->pdo->prepare("SELECT * FROM users WHERE email = '$values[0]' ");
         $statement->execute();
         $result = $statement->fetchAll(PDO::FETCH_NUM);
-
         if($result){
             //Hashed password from database
             $hash = $result[0][5];
@@ -108,10 +94,8 @@ class QueryBuilder
             $_SESSION['id'] = $result[0][0];
             if (password_verify(trim($_POST['password']), $hash)) {
                 // Correcte inlog
-
                 //$result[0][6] = Check 'Role' field from users table
                 if($result[0][6] == "Administrator") {
-
                     $_SESSION['AdminLogin'] = $result;
                     //print_r($_SESSION);
                     header('Location: /dashboard');
@@ -128,36 +112,32 @@ class QueryBuilder
                     $_SESSION['KindLogin'] = $result;
                     header('Location: /dashboard');
                 }
-
-
             } else {
                 // Vekeerd wachtwoord of gebruikersnaam
                 echo " <script type=\"text/javascript\"> setTimeout(function(){ swal(\"Fout\", \"Gegevens niet gevonden, Probeer nogmaals.\", \"error\"); }, 500); </script>";
             }
-
         }else{
             echo " <script type=\"text/javascript\"> setTimeout(function(){ swal(\"Fout\", \"Gegevens niet gevonden, Probeer nogmaals.\", \"error\"); }, 500); </script>";
         }
-
     }
     catch(PDOException $e)
     {
         echo "Error: " . $e->getMessage();
     }
-
         return $result;
     }
 
     public function Get_current_Account_info($values)
-    {   try{
-        //SQL query being executed
-        $statement = $this->pdo->prepare("SELECT * FROM users  WHERE id = $values ");
-        $statement->execute();
-        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+    {
+        try {
+            //SQL query being executed
+            $statement = $this->pdo->prepare("SELECT * FROM users  WHERE id = $values ");
+            $statement->execute();
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        $json = json_encode($result);
+            $json = json_encode($result);
 
-        echo "<script>
+            echo "<script>
         var json= $json;
         var id = json[0].id;
         var fname = json[0].fname;
@@ -182,24 +162,27 @@ class QueryBuilder
         });
     </script>";
 
-    }
-    catch(PDOException $e)
-    {
-        echo "Error: " . $e->getMessage();
-    }
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
 
     }
 
+<<<<<<< HEAD
     public function Account_info_change($values){
         try{
+=======
+    public function Account_info_change($values)
+    {
+
+        try {
+>>>>>>> 083d9cde1a740cae2a06bdf3e0cdde3267a3d70c
             //SQL query being executed
             $statement = $this->pdo->prepare("UPDATE users SET fname = '$values[0]', lname = '$values[1]', email = '$values[2]', mobile= '$values[3]', role = '$values[4]', active = '$values[6]'  WHERE id = '$values[5]'");
             $statement->execute();
 
             return true;
-        }
-        catch(PDOException $e)
-        {
+        } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
             return false;
         }
