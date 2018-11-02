@@ -30,7 +30,7 @@ $router->post('child_details_post', 'controllers/post/child_details_post.php');
 
 $router->post('post_add_user', 'controllers/post/add_user.php');
 $router->post('sendmail', 'controllers/post/send_mail.php');
-//$router->post('change_details', 'controllers/post/change_details.php');
+$router->post('change_details', 'controllers/post/change_details.php');
 $router->post('Account_info_change', 'controllers/post/Account_info_change.php');
 
 //Remove actions
