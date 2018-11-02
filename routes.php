@@ -8,8 +8,6 @@
 //$_SESSION['OuderLogin']
 //$_SESSION['KindLogin']
 
-//Hey Navid
-
 $router->get('', 'controllers/index.php');
 $router->get('home', 'controllers/index.php');
 
