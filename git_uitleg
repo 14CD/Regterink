@@ -18,3 +18,5 @@ git log
 
 <! Bij een merge conflict kan je terug gaan naar de vorige commit met !>
 git stash
+
+<! ho !>
