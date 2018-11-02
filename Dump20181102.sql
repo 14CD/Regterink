@@ -159,6 +159,7 @@ CREATE TABLE `profiles_kids` (
   `dob` date NOT NULL DEFAULT '2000-01-31' COMMENT 'YYYY-MM-DD',
   `reason` varchar(1024) DEFAULT NULL,
   `idcareforschema` int(11) DEFAULT NULL,
+  `comment` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -169,6 +170,7 @@ CREATE TABLE `profiles_kids` (
 
 LOCK TABLES `profiles_kids` WRITE;
 /*!40000 ALTER TABLE `profiles_kids` DISABLE KEYS */;
+INSERT INTO `profiles_kids` VALUES (91,'testtest@test.nl','1998-01-01','asdf',91,'asdf'),(92,'YorinMeijerink','1998-01-01','Eaque ducimus dolorem aut aut velit sit officia nisi sit nisi neque laborum Voluptatem qui nihil id',92,'Rem dolor sequi velit voluptatibus sunt excepteur eos consequatur Et magni corporis illum saepe corporis quia ea'),(97,'Testnekneenogniet@nogniet.nl','1998-01-01','Quaerat vel aliquam dolores quisquam elit nostrum in nihil omnis est quasi atque perferendis velit molestiae molestiae',97,'Autem nostrud sequi voluptatem incididunt alias do aperiam non ullamco minus'),(98,'Linda LawsonAidan Harris','1998-01-01','Probleem met de ouders',98,'Verelend kut kind');
 /*!40000 ALTER TABLE `profiles_kids` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -215,7 +217,7 @@ CREATE TABLE `users` (
   `active` int(11) NOT NULL DEFAULT '0',
   `file` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -224,7 +226,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (87,'aaron','weggemans','aaronweggemans@hotmail.nl','0631234504','$2y$10$RVn5I.t.L1hTy1lz2DevcuswwuiuQCUbc4lXWmnN0sBwNiC5VEd/u','Administrator',1,'3869 aangepast.png'),(89,'Onno','Kassanmantoelib','qaxoqigac@mailinator.net','44','$2y$10$sJ3/pZ4/rFoIbUrWWMeGAuDYByoXMnY8qAJUpwZtxic0o/scmynkW','Kind',1,NULL),(91,'test','test','test@test.nl','29340','$2y$10$kh8WL7n1ohNtAcR1zdeKrOLPTZ0dIrntv1u8NR1qV.E/GE15auE9.','Kind',1,'Screenshot_20180216-200521.png'),(92,'Yorin','Meijerink','yorinmeijerink@hotmail.nl','13','$2y$10$quH1zMHy3AA8RBbKksNKIOonkXdq6poGaf9JNQbQVAQdsNamUTYLK','Kind',1,'Screenshot_20180127-115019.png');
+INSERT INTO `users` VALUES (87,'Aaron','weggemans','aaronweggemans@hotmail.nl','631234504','$2y$10$RVn5I.t.L1hTy1lz2DevcuswwuiuQCUbc4lXWmnN0sBwNiC5VEd/u','Administrator',1,'3869 aangepast.png'),(92,'Yorin','Meijerink','yorinmeijerink@hotmail.nl','13','$2y$10$quH1zMHy3AA8RBbKksNKIOonkXdq6poGaf9JNQbQVAQdsNamUTYLK','Kind',1,'Screenshot_20180127-115019.png'),(94,'Ruben','Ford','test@test1.nl','1928374','$2y$10$9dQYO0jbRBnidLs2IjBz6ezstehBR49MsgEycwqQkGJ2iA5JwD8bq','Administrator',1,'3869 aangepast.png'),(96,'Justin','Degraaff','test@test2.nl','10','$2y$10$DnkC1TNnShsfXMjT/X5yEuEk4z59w9zID5F9MU.4UTEQa3C2Rvoz6','Administrator',1,'20180225_140844.jpg'),(99,'Jandino','Hoeksema','stephanhoeksema@hotmail.nl','46','$2y$10$8nLADCtS07poCDtt.wL0xuw4rhe21oZ1P96GgNyWVFbvidQO.y2ge','Administrator',1,'3869 aangepast.png');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -237,4 +239,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-01 19:55:44
+-- Dump completed on 2018-11-02 15:27:30
