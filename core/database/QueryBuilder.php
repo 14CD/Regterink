@@ -86,7 +86,7 @@ class QueryBuilder
             $statement->execute();
         }
         else {
-            $stmnt = $this->pdo->prepare("UPDATE $table SET reason = $conditions[3], comment = $conditions[5] WHERE id = $id;");
+            $stmnt = $this->pdo->prepare("UPDATE $table SET reason = '$values[3]', comment = '$values[5]' WHERE `id` = $id;");
             $stmnt->execute();
         }
     }

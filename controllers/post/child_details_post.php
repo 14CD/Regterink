@@ -30,11 +30,11 @@ if ($_POST)
 
     $implement = [
         $id,
-        $Allvalues[1] . $Allvalues[2],
+        $_POST['fname'] . $_POST['lname'],
         '1998-01-01',
-        $Allvalues[4],
+        $_POST['reason'],
         $id,
-        $Allvalues[5]
+        $_POST['comment']
     ];
 
     $table = "profiles_kids";

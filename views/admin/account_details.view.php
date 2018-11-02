@@ -85,7 +85,7 @@
                                         <div class="mt-2 mb-2">
                                             Verander profiel foto?
                                         </div>
-                                        <input type="file" name="profilePicture" id="profilePicture" class="form-control-file">
+                                        <input type="file" name="profilePicture" id="profilePicture" class="form-control-file" value="<?php echo $profilePicture[0]['file'] ?>">
                                     </div>
                                 </div>
                                 <div class="align" align="right">
