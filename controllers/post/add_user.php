@@ -6,16 +6,40 @@
  * Time: 12:40
  */
 
-//retrieve data
-$table = "users";
-$conditions = ["fname", "lname", "email", "mobile","password", "role", "active"];
-$wachtwoord = trim($_POST['password']);
-$hash = password_hash($wachtwoord, PASSWORD_DEFAULT);
-$values = [$_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['mobile'], $hash, $_POST['role'], $_POST['active']];
+if ($_POST) {
+    //retrieve data
+    $table = "users";
 
-//checks on data
+    $conditions = [
+        "fname",
+        "lname",
+        "email",
+        "mobile",
+        "password",
+        "role",
+        "active",
+        "date"
+    ];
 
-//database insert
-$app['database']->insertInto($table, $conditions, $values);
+    $wachtwoord = trim($_POST['password']);
 
-require("views/admin/add_user.view.php");
+    $hash = password_hash($wachtwoord, PASSWORD_DEFAULT);
+
+    $values = [
+        $_POST['fname'],
+        $_POST['lname'],
+        $_POST['email'],
+        $_POST['mobile'],
+        $hash,
+        $_POST['role'],
+        $_POST['active'],
+        $_POST['date']
+    ];
+
+    //checks on data
+
+    //database insert
+    $app['database']->insertInto($table, $conditions, $values);
+
+    require("views/admin/add_user.view.php");
+}

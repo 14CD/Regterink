@@ -7,7 +7,7 @@
  * */
 $query = require 'core/bootstrap.php';
 $current = Request::uri();
-$url = "http://localhost:4444";
+$target_dir = "/Users/aaronweggemans/Documents/Regterink/public/images/profile/";
 
 /**
  * Where are you in your page and where do you go with the
