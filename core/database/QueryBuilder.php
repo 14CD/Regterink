@@ -91,6 +91,19 @@ class QueryBuilder
         }
     }
 
+    public function changeUser($table, $conditions, $values, $id) {
+        $statement = $this->pdo->prepare("
+          UPDATE `{$table}` SET
+            `$conditions[0]` = '$values[0]',
+            `$conditions[1]` = '$values[1]',
+            `$conditions[2]` = '$values[2]',
+            `$conditions[3]` = $values[3],
+            `$conditions[4]` = $values[4]
+            WHERE `id` = $id
+        ");
+        $statement->execute();
+    }
+
     public function passwordChange($table, $password, $email)
     {
         $statement = $this->pdo->prepare("UPDATE `{$table}` SET `password` = '{$password}' WHERE `email` = '{$email}'");

@@ -15,6 +15,7 @@
                         Uw gegevens
                     </div>
                     <form action="change_details" method="post">
+                        <input type="hidden" name="id" value="<?php echo $user[0]['id'] ?>">
                         <div class="card-body">
                             <div class="row mb-2">
                                 <div class="col-md-4">

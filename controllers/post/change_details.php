@@ -6,24 +6,28 @@
  * Time: 16:50
  */
 
-$table = "users";
+if($_POST)
+{
+    $id = $_POST['id'];
 
-$conditions = [
-    'fname',
-    'lname',
-    'email',
-    'mobile',
-    'active'
-];
+    $table = "users";
 
-$values = [
-    $_POST['fname'],
-    $_POST['lname'],
-    $_POST['email'],
-    $_POST['mobile'],
-    $_POST['active'],
-];
+    $conditions = [
+        'fname',
+        'lname',
+        'email',
+        'mobile',
+        'active'
+    ];
 
-$app['database']->changeAccountDetails($table, $conditions, $values);
+    $values = [
+        $_POST['fname'],
+        $_POST['lname'],
+        $_POST['email'],
+        $_POST['mobile'],
+        $_POST['active'],
+    ];
 
-header("Location: dashboard");
+    $app['database']->changeUser($table, $conditions, $values, $id);
+    header("Location: user");
+}

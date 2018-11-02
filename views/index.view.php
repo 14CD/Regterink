@@ -27,7 +27,7 @@
             <div class="container my-auto">
                 <div class="row">
                     <div class="col-lg-10 mx-auto">
-                        <h2>Ontmoet de familie Regterink</h2>
+                        <h2>Ontmoet de familie regterink</h2>
                     </div>
                     <div class="col-lg-8 mx-auto">
                         <p class="darker-text mb-5">Al jaren werken wij met kinderen die het moeilijk thuis hebben, of
