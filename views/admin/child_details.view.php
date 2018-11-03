@@ -68,31 +68,26 @@
                                         <p><?php echo $child[0]['mobile'] ?></p>
                                     </div>
                                 </div>
-                                <?php
-                                    //If child is 18 years old
-                                    //$ageArray[0]['date']
-                                    $age = 18;
-                                    if(time() - $ageArray[0]['date'] < $age * 31536000)
-                                    {
-                                        die(var_dump("Leeftijd is geen 18"));
-                                    }
-                                    else {
-                                        die(var_dump("leeftijd is achtien"));
-                                    }
-
-                                    die(var_dump($ageArray[0]['date']));
-                                ?>
                                 <div class="row mb-3">
                                     <div class="col-md-5">
                                         <p>Behandelsplan</p>
                                     </div>
                                     <div class="col-md-7">
+                                        <?php if(isset($childDocument)) : ?>
                                         <a href="public/documents/<?php echo $childDocument; ?>">
                                         <button type="button" class="btn btn-info">
                                             <i class="fa fa-download"></i>
                                             Download Behandelsplan
                                         </button>
                                         </a>
+                                        <?php else : ?>
+                                            <a>
+                                                <button type="button" class="btn btn-info btn-danger">
+                                                    <i class="fa fa-download"></i>
+                                                    Momenteel geen document beschikbaar.
+                                                </button>
+                                            </a>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                                 <div class="row mb-3">

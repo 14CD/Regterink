@@ -50,7 +50,9 @@ require __DIR__ . '/../partials/nav.php';
                                 <?php $docName = $app['database']->getDocumentNameById($child['id']);
                                 if(isset($docName)) :
                                 ?>
-                                <a href='public/documents/<?php echo $app['database']->getDocumentNameById($child['id']) ?>' class="btn btn-primary">document bekijken</a>
+                                <a href='public/documents/<?php echo $app['database']->getDocumentNameById($child['id']) ?>' class="card-link">bekijken</a>
+                                    <a href='delete_document?id=<?php echo $child['id'] ?>' class="card-link">verwijderen</a>
+                                    <a href='change_document?id=<?php echo $child['id'] ?>' class="card-link">aanpassen</a>
                                 <?php else : ?>
                                     <a class="btn btn-primary">geen document beschikbaar</a>
                                 <?php endif; ?>

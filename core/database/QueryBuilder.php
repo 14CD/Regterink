@@ -152,6 +152,7 @@ class QueryBuilder
             }
             //Check if user exists
             if (isset($result[0])) {
+                $_SESSION['id'] = $result[0][0];
                 if (password_verify(trim($_POST['password']), $hash)) {
                     // Correcte inlog
                     //$result[0][6] = Check 'Role' field from users table
@@ -284,5 +285,44 @@ class QueryBuilder
         //retrieve amount of rows from users db
         $result = $this->pdo->prepare("SELECT * FROM users");
         return $result = $result->execute();
+    }
+
+    public function changeDocument($user_id, $description, $file, $child_id) {
+        try {
+            $date = date("Y-m-d");
+            $stmt = $this->pdo->prepare("UPDATE documents SET description = :description, date_added = :date, user_id = :user_id, document_path = :document_path WHERE child_id = :child_id");
+            $stmt->bindParam(":user_id", $user_id);
+            $stmt->bindParam(":description", $description);
+            $stmt->bindParam(":date", $date);
+            $stmt->bindParam(":document_path", $file);
+            $stmt->bindParam(":child_id", $child_id);
+            $stmt->execute();
+        } catch (PDOException $exception) {
+            die($exception->getMessage());
+        }
+    }
+
+    public function deleteDocument($id) {
+        try {
+            $stmt = $this->pdo->prepare("SELECT document_path FROM documents WHERE child_id = :id");
+            $stmt->bindParam(":id", $id);
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $stmt->execute();
+            $fileName = $stmt->fetch()['document_path'];
+            $stmt = $this->pdo->prepare("DELETE FROM documents WHERE document_path = :filename");
+            $stmt->bindParam(":filename", $fileName);
+            $stmt->execute();
+            unlink("public/documents/" . $fileName);
+        } catch (PDOException $exception) {
+            echo $exception->getMessage();
+        }
+    }
+
+    public function getChangeDocumentForm($id) {
+        $stmt = $this->pdo->prepare("SELECT * FROM documents WHERE child_id = :id");
+        $stmt->bindParam(":id", $id);
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $stmt->execute();
+        return $stmt->fetch();
     }
 }

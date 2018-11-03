@@ -24,10 +24,10 @@ $router->get('nuturing', 'controllers/nuturing.php');
 // Document related routes.
 $router->get('documents', 'controllers/get/documents/list_documents.php');
 $router->get('add_document', 'controllers/get/documents/add_document.php');
-$router->get('change_document', 'controllers/post/documents/change_document.php');
-$router->post('add_document', 'controllers/post/documents/add_document.php');
+$router->get('change_document', 'controllers/get/documents/change_document.php');
 $router->post('change_document', 'controllers/post/documents/change_document.php');
-$router->post('delete_document', 'controllers/post/documents/delete_document.php');
+$router->post('add_document', 'controllers/post/documents/add_document.php');
+$router->get('delete_document', 'controllers/get/documents/delete_document.php');
 
 
 $router->get('logout', 'controllers/logout.php');

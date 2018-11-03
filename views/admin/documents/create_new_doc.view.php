@@ -5,7 +5,6 @@ require __DIR__ .  '/../partials/nav.php';
 <div id="wrapper">
     <?php
     require __DIR__ . '/../partials/sidebar.php';
-
     ?>
     <div id="content-wrapper">
         <div class="container-fluid">
