@@ -20,6 +20,7 @@ require __DIR__ . '/../partials/nav.php';
             <div class="card mb-3">
                 <div class="card-header">
                     documenten
+                    <a href="add_document" class="float-sm-right btn btn-success">Koppel een document</a>
                 </div>
                 <div class="card-body">
                     <?php
