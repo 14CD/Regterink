@@ -20,7 +20,16 @@ $router->get('user', 'controllers/users.php');
 $router->get('add_user', 'controllers/new_user.php');
 $router->get('account_details', 'controllers/account_details.php');
 $router->get('nuturing', 'controllers/nuturing.php');
+
+// Document related routes.
 $router->get('documents', 'controllers/get/documents/list_documents.php');
+$router->get('add_document', 'controllers/get/documents/add_document.php');
+$router->get('change_document', 'controllers/post/documents/change_document.php');
+$router->post('add_document', 'controllers/post/documents/add_document.php');
+$router->post('change_document', 'controllers/post/documents/change_document.php');
+$router->post('delete_document', 'controllers/post/documents/delete_document.php');
+
+
 $router->get('logout', 'controllers/logout.php');
 
 $router->get('user_details', 'controllers/user_details.php');

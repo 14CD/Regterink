@@ -57,6 +57,25 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
+
+    public function getDocumentNameById($id) {
+        $stmt = $this->pdo->prepare("SELECT document_path FROM documents WHERE child_id = :id");
+        $stmt->bindParam(":id", $id);
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $stmt->execute();
+        return $stmt->fetch()['document_path'];
+    }
+
+    public function listAllChildren() {
+        $stmt = $this->pdo->prepare("SELECT * FROM users WHERE role = :kind");
+        $kind = "kind";
+        $stmt->bindParam(":kind", $kind);
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+
     public function insertInto($table, $conditions, $values)
     {
         $conditionsArray = implode(", ", array_map(function ($str) {
@@ -110,6 +129,16 @@ class QueryBuilder
         $statement->execute();
     }
 
+    public function addNewDocument($user_id, $description, $date_added, $file, $child_id) {
+        $stmt = $this->pdo->prepare("INSERT INTO `documents` (description, date_added, user_id, document_path, child_id) VALUES (:description, :date_added, :user_id, :document_path, :child_id)");
+        $stmt->bindParam(":user_id", $user_id);
+        $stmt->bindParam(":description", $description);
+        $stmt->bindParam(":date_added", $date_added);
+        $stmt->bindParam(":document_path", $file);
+        $stmt->bindParam(":child_id", $child_id);
+        $stmt->execute();
+    }
+
     public function LoginAs($values)
     {
         try {
@@ -123,7 +152,6 @@ class QueryBuilder
             }
             //Check if user exists
             if (isset($result[0])) {
-                $_SESSION['id'] = $result[0][0];
                 if (password_verify(trim($_POST['password']), $hash)) {
                     // Correcte inlog
                     //$result[0][6] = Check 'Role' field from users table
@@ -138,8 +166,12 @@ class QueryBuilder
                         $_SESSION['OuderLogin'] = $result;
                         header('Location: /dashboard');
                     } elseif ($result[0][6] == "Kind") {
-                        $_SESSION['KindLogin'] = $result;
-                        header('Location: /dashboard');
+                        $fileName = "public/documents/" . $this->getDocumentNameById($result[0][0]);
+                            if(!file_exists($fileName) || $result[0][9] <= 18) {
+                                echo " <script type=\"text/javascript\"> setTimeout(function(){ swal(\"Fout\", \"Je hebt momenteel geen toegang tot dit document. Je bent misschien te jong...\", \"error\"); }, 500); </script>";
+                            } else {
+                                header("Location: {$fileName}");
+                            }
                     }
                 } else {
                     // Vekeerd wachtwoord of gebruikersnaam
@@ -213,6 +245,38 @@ class QueryBuilder
     {
         $sql = "DELETE FROM {$table} WHERE id={$id}";
         $this->pdo->exec($sql);
+    }
+
+    public function getChildrenByNurse($id) {
+
+    }
+    public function getChildNameById($id) {
+        $stmt = $this->pdo->prepare("SELECT fname, lname FROM users WHERE id = :id");
+        $stmt->bindParam(":id", $id);
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $stmt->execute();
+        return $stmt->fetch()['fname'];
+    }
+
+    public function insertNewUser($fname, $lname, $email, $mobile, $password, $role, $active, $age) {
+        try {
+            $stmt = $this->pdo->prepare("INSERT INTO users (fname, lname, email, mobile, password, role, active, age)
+                                        VALUES (:fname, :lname, :email, :mobile, :password, :role, :active, TIMESTAMPDIFF(YEAR, :age, NOW()))");
+            $stmt->bindParam(":fname", $fname);
+            $stmt->bindParam(":lname", $lname);
+            $stmt->bindParam(":email", $email);
+            $stmt->bindParam(":mobile", $mobile);
+            $stmt->bindParam(":password", $password);
+            $stmt->bindParam(":role", $role);
+            $stmt->bindParam(":active", $active);
+            $date = str_replace('/', '-', $age);
+            $date = date('Y-m-d', strtotime($date));
+            $stmt->bindParam(":age", $date);
+            $stmt->execute();
+        } catch (PDOException $exception) {
+            return die($exception->getMessage());
+        }
+
     }
 
     public function numberOfRows()

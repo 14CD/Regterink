@@ -6,4 +6,7 @@
  * Time: 15:38
  */
 
-require 'views/admin/documents/list_documents.view.php';
+$children = $app['database']->selectSpecificRules("users", "Kind");
+
+require __DIR__ . '/../../../views/admin/documents/list_documents.view.php';
+

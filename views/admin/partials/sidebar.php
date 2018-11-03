@@ -31,16 +31,6 @@
             <span>Gebruikers</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="nuturing">
-            <i class="fas fa-fw fa-heart"></i>
-            <span>Verzorgers</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="nuturing">
-            <i class="fas fa-fw fa-people-carry"></i>
-            <span>Ouders</span></a>
-    </li>
-    <li class="nav-item">
         <a class="nav-link" href="children">
             <i class="fas fa-fw fa-child"></i>
             <span>Kinderen</span></a>

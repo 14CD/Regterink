@@ -70,9 +70,12 @@
                                         <p>Behandelsplan</p>
                                     </div>
                                     <div class="col-md-7">
-                                        <button type="button" class="btn btn-info"><i class="fa fa-download"></i>
+                                        <a href="public/documents/<?php echo $childDocument; ?>">
+                                        <button type="button" class="btn btn-info">
+                                            <i class="fa fa-download"></i>
                                             Download Behandelsplan
                                         </button>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
