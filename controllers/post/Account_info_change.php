@@ -13,7 +13,6 @@ if ($_POST) {
     ];
 
     //checks on data
-    $target_dir = "/Users/aaronweggemans/Documents/Regterink/public/images/profile/";
     $target_file = $target_dir . basename($_FILES["profilePicture"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));

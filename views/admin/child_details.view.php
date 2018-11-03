@@ -1,6 +1,9 @@
 <?php
     require 'partials/head.php';
     require 'partials/nav.php';
+
+    //Retrieve age
+    $ageArray = $app['database']->selectWhere("users", $child[0]["id"]);
 ?>
 <div id="wrapper">
     <?php
@@ -65,6 +68,20 @@
                                         <p><?php echo $child[0]['mobile'] ?></p>
                                     </div>
                                 </div>
+                                <?php
+                                    //If child is 18 years old
+                                    //$ageArray[0]['date']
+                                    $age = 18;
+                                    if(time() - $ageArray[0]['date'] < $age * 31536000)
+                                    {
+                                        die(var_dump("Leeftijd is geen 18"));
+                                    }
+                                    else {
+                                        die(var_dump("leeftijd is achtien"));
+                                    }
+
+                                    die(var_dump($ageArray[0]['date']));
+                                ?>
                                 <div class="row mb-3">
                                     <div class="col-md-5">
                                         <p>Behandelsplan</p>
