@@ -51,7 +51,7 @@
                                             </td>
                                         </tr>
                                         <?php
-                                            if ($_SESSION['VerzorgendeLogin'] || $_SESSION['OuderLogin'] || $_SESSION['KindLogin'])
+                                            if (isset($_SESSION['VerzorgendeLogin']) || isset($_SESSION['OuderLogin']) || isset($_SESSION['KindLogin']))
                                             {
 
                                             }
