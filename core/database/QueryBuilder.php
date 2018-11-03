@@ -10,11 +10,8 @@ class QueryBuilder
 
     public function __construct(PDO $pdo)
     {
+        session_start();
         $this->pdo = $pdo;
-
-        if (!isset($_SESSION)) {
-            session_start();
-        }
     }
 
     public function selectAll($table)
@@ -57,8 +54,8 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
-
-    public function getDocumentNameById($id) {
+    public function getDocumentNameById($id)
+    {
         $stmt = $this->pdo->prepare("SELECT document_path FROM documents WHERE child_id = :id");
         $stmt->bindParam(":id", $id);
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -66,7 +63,8 @@ class QueryBuilder
         return $stmt->fetch()['document_path'];
     }
 
-    public function listAllChildren() {
+    public function listAllChildren()
+    {
         $stmt = $this->pdo->prepare("SELECT * FROM users WHERE role = :kind");
         $kind = "kind";
         $stmt->bindParam(":kind", $kind);
@@ -90,9 +88,9 @@ class QueryBuilder
         $statement->execute();
     }
 
-    public function addChildDetails($id, $table, $conditions, $values) {
-        if(empty($this->selectWhere("profiles_kids", $id)) || $this->selectWhere("profiles_kids", $id) == NULL)
-        {
+    public function addChildDetails($id, $table, $conditions, $values)
+    {
+        if (empty($this->selectWhere("profiles_kids", $id)) || $this->selectWhere("profiles_kids", $id) == NULL) {
             $conditionsArray = implode(", ", array_map(function ($str) {
                 return sprintf("`%s`", $str);
             }, $conditions));
@@ -103,14 +101,14 @@ class QueryBuilder
 
             $statement = $this->pdo->prepare("INSERT INTO {$table} ($conditionsArray) VALUES ($valuesArray)");
             $statement->execute();
-        }
-        else {
+        } else {
             $stmnt = $this->pdo->prepare("UPDATE $table SET reason = '$values[3]', comment = '$values[5]' WHERE `id` = $id;");
             $stmnt->execute();
         }
     }
 
-    public function changeUser($table, $conditions, $values, $id) {
+    public function changeUser($table, $conditions, $values, $id)
+    {
         $statement = $this->pdo->prepare("
           UPDATE `{$table}` SET
             `$conditions[0]` = '$values[0]',
@@ -129,7 +127,8 @@ class QueryBuilder
         $statement->execute();
     }
 
-    public function addNewDocument($user_id, $description, $date_added, $file, $child_id) {
+    public function addNewDocument($user_id, $description, $date_added, $file, $child_id)
+    {
         $stmt = $this->pdo->prepare("INSERT INTO `documents` (description, date_added, user_id, document_path, child_id) VALUES (:description, :date_added, :user_id, :document_path, :child_id)");
         $stmt->bindParam(":user_id", $user_id);
         $stmt->bindParam(":description", $description);
@@ -168,11 +167,11 @@ class QueryBuilder
                         header('Location: /dashboard');
                     } elseif ($result[0][6] == "Kind") {
                         $fileName = "public/documents/" . $this->getDocumentNameById($result[0][0]);
-                            if(!file_exists($fileName) || $result[0][9] <= 18) {
-                                echo " <script type=\"text/javascript\"> setTimeout(function(){ swal(\"Fout\", \"Je hebt momenteel geen toegang tot dit document. Je bent misschien te jong...\", \"error\"); }, 500); </script>";
-                            } else {
-                                header("Location: {$fileName}");
-                            }
+                        if (!file_exists($fileName) || $result[0][9] <= 18) {
+                            echo " <script type=\"text/javascript\"> setTimeout(function(){ swal(\"Fout\", \"Je hebt momenteel geen toegang tot dit document. Je bent misschien te jong...\", \"error\"); }, 500); </script>";
+                        } else {
+                            header("Location: {$fileName}");
+                        }
                     }
                 } else {
                     // Vekeerd wachtwoord of gebruikersnaam
@@ -187,48 +186,44 @@ class QueryBuilder
         return $result;
     }
 
-    public function Get_current_Account_info($values)
+    public function get_current_account_info($values)
     {
         try {
-            //SQL query being executed
             $statement = $this->pdo->prepare("SELECT * FROM users  WHERE id = $values ");
             $statement->execute();
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
             $json = json_encode($result);
 
             echo "<script>
-        var json= $json;
-        var id = json[0].id;
-        var fname = json[0].fname;
-        var lname = json[0].lname;
-        var email = json[0].email;
-        var mobile = json[0].mobile;
-        var password = json[0].password;
-        var role = json[0].role;
-        var active = json[0].active;
-        
-        jQuery(document).ready(function($) {
-        
-        $('#fname').attr('value', fname);
-        $('#lname').attr('value', lname);
-        $('#email').attr('value', email);
-        $('#mobiel').attr('value', mobile);
-        $('#curr_select').attr('value', role);
-        $('#curr_select').text(role);
-        $('#id').attr('value', id);
-        $('#active').attr('value', active);
-        
-        });
-    </script>";
-
+                var json= $json;
+                var id = json[0].id;
+                var fname = json[0].fname;
+                var lname = json[0].lname;
+                var email = json[0].email;
+                var mobile = json[0].mobile;
+                var password = json[0].password;
+                var role = json[0].role;
+                var active = json[0].active;
+                
+                window.onload = function() {
+                    $(document).ready(function() {
+                        $('#fname').attr('value', fname);
+                        $('#lname').attr('value', lname);
+                        $('#email').attr('value', email);
+                        $('#mobiel').attr('value', mobile);
+                        $('#curr_select').attr('value', role);
+                        $('#curr_select').text(role);
+                        $('#id').attr('value', id);
+                        $('#active').attr('value', active);
+                    }); 
+                };
+            </script>";
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
-
     }
 
-    public function Account_info_change($values)
+    public function account_info_change($values)
     {
         try {
             //SQL query being executed
@@ -248,10 +243,13 @@ class QueryBuilder
         $this->pdo->exec($sql);
     }
 
-    public function getChildrenByNurse($id) {
+    public function getChildrenByNurse($id)
+    {
 
     }
-    public function getChildNameById($id) {
+
+    public function getChildNameById($id)
+    {
         $stmt = $this->pdo->prepare("SELECT fname, lname FROM users WHERE id = :id");
         $stmt->bindParam(":id", $id);
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -259,7 +257,8 @@ class QueryBuilder
         return $stmt->fetch()['fname'];
     }
 
-    public function insertNewUser($fname, $lname, $email, $mobile, $password, $role, $active, $age) {
+    public function insertNewUser($fname, $lname, $email, $mobile, $password, $role, $active, $age)
+    {
         try {
             $stmt = $this->pdo->prepare("INSERT INTO users (fname, lname, email, mobile, password, role, active, age)
                                         VALUES (:fname, :lname, :email, :mobile, :password, :role, :active, TIMESTAMPDIFF(YEAR, :age, NOW()))");

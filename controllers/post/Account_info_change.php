@@ -41,6 +41,6 @@ if ($_POST) {
     }
 
     //database update
-    $app['database']->Account_info_change($values);
-    require("views/admin/account_details.view.php");
+    $app['database']->account_info_change($values);
+    header("Location: account_details");
 }

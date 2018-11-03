@@ -1,13 +1,4 @@
 <?php
-/**
- * GET routes
- */
-
-//$_SESSION['AdminLogin']
-//$_SESSION['VerzorgendeLogin']
-//$_SESSION['OuderLogin']
-//$_SESSION['KindLogin']
-
 $router->get('', 'controllers/index.php');
 $router->get('home', 'controllers/index.php');
 
@@ -40,7 +31,7 @@ $router->post('child_details_post', 'controllers/post/child_details_post.php');
 $router->post('post_add_user', 'controllers/post/add_user.php');
 $router->post('sendmail', 'controllers/post/send_mail.php');
 $router->post('change_details', 'controllers/post/change_details.php');
-$router->post('Account_info_change', 'controllers/post/Account_info_change.php');
+$router->post('account_info_change', 'controllers/post/account_info_change.php');
 
 //Remove actions
 $router->post('post_remove_user', 'controllers/post/post_remove_user.php');
