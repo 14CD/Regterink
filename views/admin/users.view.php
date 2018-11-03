@@ -17,7 +17,9 @@
                         <th scope="col">Voornaam</th>
                         <th scope="col">Achternaam</th>
                         <th scope="col">Rol</th>
-                        <th scope="col"></th>
+                        <th scope="col"><a type="" name="add_user" class="btn btn-success" href="add_user">Voeg
+                                gebruiker toe</a>
+                        </th>
                     </tr>
                     </thead>
                     <tbody>
