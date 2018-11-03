@@ -36,7 +36,7 @@ require __DIR__ . '/../partials/nav.php';
                                     <?php
                                 }
                                 else {
-                                    echo 'src="/public/images/profile/' . $child['file'] . '"';
+                                    echo 'src="public/images/profile/' . $child['file'] . '"';
                                 }
                                 ?>
                                  alt="Card image cap">

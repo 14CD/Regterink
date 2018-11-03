@@ -7,6 +7,7 @@
  * */
 $query = require 'core/bootstrap.php';
 $current = Request::uri();
+//HIER AAN DENKEN!
 $target_dir = "/Users/aaronweggemans/Documents/Regterink/public/images/profile/";
 
 /**

@@ -71,16 +71,16 @@
                                 <?php
                                     //If child is 18 years old
                                     //$ageArray[0]['date']
-                                    $age = 18;
-                                    if(time() - $ageArray[0]['date'] < $age * 31536000)
-                                    {
-                                        die(var_dump("Leeftijd is geen 18"));
-                                    }
-                                    else {
-                                        die(var_dump("leeftijd is achtien"));
-                                    }
-
-                                    die(var_dump($ageArray[0]['date']));
+//                                    $age = 18;
+//                                    if(time() - $ageArray[0]['date'] < $age * 31536000)
+//                                    {
+//                                        die(var_dump("Leeftijd is geen 18"));
+//                                    }
+//                                    else {
+//                                        die(var_dump("leeftijd is achtien"));
+//                                    }
+//
+//                                    die(var_dump($ageArray[0]['date']));
                                 ?>
                                 <div class="row mb-3">
                                     <div class="col-md-5">

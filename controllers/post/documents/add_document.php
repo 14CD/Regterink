@@ -1,4 +1,5 @@
 <?php
+//DIT VERANDEREN
 $targetfolder = __DIR__ . "/../../../public/documents/";
 $targetfolder = $targetfolder . $_FILES['document']['name'];
 

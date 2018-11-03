@@ -13,16 +13,16 @@
                 <a class="dropdown-item" href="add_user">Nieuw account</a>
                 <a class="dropdown-item" href="new_password">Nieuw wachtwoord</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/logout">Loguit</a>
+                <a class="dropdown-item" href="logout">Loguit</a>
             </div>
             <?php elseif(isset($_SESSION['VerzorgendeLogin'])) : ?>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="/logout">Loguit</a>
+                    <a class="dropdown-item" href="logout">Loguit</a>
                 </div>
             <?php elseif(isset($_SESSION['KindLogin'])) : ?>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                     <a class="dropdown-item" href="account_details">Account</a>
-                    <a class="dropdown-item" href="/logout">Loguit</a>
+                    <a class="dropdown-item" href="logout">Loguit</a>
                 </div>
             <?php endif; ?>
         </li>
