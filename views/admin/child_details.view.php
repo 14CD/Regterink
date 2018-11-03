@@ -1,6 +1,9 @@
 <?php
     require 'partials/head.php';
     require 'partials/nav.php';
+
+    //Retrieve age
+    $ageArray = $app['database']->selectWhere("users", $child[0]["id"]);
 ?>
 <div id="wrapper">
     <?php
@@ -70,9 +73,21 @@
                                         <p>Behandelsplan</p>
                                     </div>
                                     <div class="col-md-7">
-                                        <button type="button" class="btn btn-info"><i class="fa fa-download"></i>
+                                        <?php if(isset($childDocument)) : ?>
+                                        <a href="public/documents/<?php echo $childDocument; ?>">
+                                        <button type="button" class="btn btn-info">
+                                            <i class="fa fa-download"></i>
                                             Download Behandelsplan
                                         </button>
+                                        </a>
+                                        <?php else : ?>
+                                            <a>
+                                                <button type="button" class="btn btn-info btn-danger">
+                                                    <i class="fa fa-download"></i>
+                                                    Momenteel geen document beschikbaar.
+                                                </button>
+                                            </a>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                                 <div class="row mb-3">

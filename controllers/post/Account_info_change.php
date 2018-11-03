@@ -13,7 +13,6 @@ if ($_POST) {
     ];
 
     //checks on data
-    $target_dir = "/Users/aaronweggemans/Documents/Regterink/public/images/profile/";
     $target_file = $target_dir . basename($_FILES["profilePicture"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -42,6 +41,6 @@ if ($_POST) {
     }
 
     //database update
-    $app['database']->Account_info_change($values);
-    require("views/admin/account_details.view.php");
+    $app['database']->account_info_change($values);
+    header("Location: account_details");
 }

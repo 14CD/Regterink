@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 8.0.12, for macos10.13 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.12, for Linux (x86_64)
 --
--- Host: localhost    Database: db_regterink
+-- Host: localhost    Database: regterink
 -- ------------------------------------------------------
 -- Server version	8.0.12
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
- SET NAMES utf8 ;
+ SET NAMES utf8mb4 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -97,6 +97,34 @@ LOCK TABLES `day2dayinformation` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `documents`
+--
+
+DROP TABLE IF EXISTS `documents`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `documents` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `description` varchar(1000) DEFAULT NULL,
+  `date_added` date DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `document_path` varchar(255) DEFAULT NULL,
+  `child_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `documents`
+--
+
+LOCK TABLES `documents` WRITE;
+/*!40000 ALTER TABLE `documents` DISABLE KEYS */;
+INSERT INTO `documents` VALUES (13,'Onno\'s document.','2018-11-02',93,'03 FACTSHEET-PUNTER.pdf',95),(14,'Document voor Onno.','2018-11-03',NULL,'03 FACTSHEET-PUNTER.pdf',99);
+/*!40000 ALTER TABLE `documents` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `events`
 --
 
@@ -159,7 +187,6 @@ CREATE TABLE `profiles_kids` (
   `dob` date NOT NULL DEFAULT '2000-01-31' COMMENT 'YYYY-MM-DD',
   `reason` varchar(1024) DEFAULT NULL,
   `idcareforschema` int(11) DEFAULT NULL,
-  `comment` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -170,7 +197,6 @@ CREATE TABLE `profiles_kids` (
 
 LOCK TABLES `profiles_kids` WRITE;
 /*!40000 ALTER TABLE `profiles_kids` DISABLE KEYS */;
-INSERT INTO `profiles_kids` VALUES (91,'testtest@test.nl','1998-01-01','asdf',91,'asdf'),(92,'YorinMeijerink','1998-01-01','Eaque ducimus dolorem aut aut velit sit officia nisi sit nisi neque laborum Voluptatem qui nihil id',92,'Rem dolor sequi velit voluptatibus sunt excepteur eos consequatur Et magni corporis illum saepe corporis quia ea'),(97,'Testnekneenogniet@nogniet.nl','1998-01-01','Quaerat vel aliquam dolores quisquam elit nostrum in nihil omnis est quasi atque perferendis velit molestiae molestiae',97,'Autem nostrud sequi voluptatem incididunt alias do aperiam non ullamco minus'),(98,'Linda LawsonAidan Harris','1998-01-01','Probleem met de ouders',98,'Verelend kut kind');
 /*!40000 ALTER TABLE `profiles_kids` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -216,8 +242,9 @@ CREATE TABLE `users` (
   `role` varchar(128) NOT NULL,
   `active` int(11) NOT NULL DEFAULT '0',
   `file` varchar(255) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -226,7 +253,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (87,'Aaron','weggemans','aaronweggemans@hotmail.nl','631234504','$2y$10$RVn5I.t.L1hTy1lz2DevcuswwuiuQCUbc4lXWmnN0sBwNiC5VEd/u','Administrator',1,'3869 aangepast.png'),(92,'Yorin','Meijerink','yorinmeijerink@hotmail.nl','13','$2y$10$quH1zMHy3AA8RBbKksNKIOonkXdq6poGaf9JNQbQVAQdsNamUTYLK','Kind',1,'Screenshot_20180127-115019.png'),(94,'Ruben','Ford','test@test1.nl','1928374','$2y$10$9dQYO0jbRBnidLs2IjBz6ezstehBR49MsgEycwqQkGJ2iA5JwD8bq','Administrator',1,'3869 aangepast.png'),(96,'Justin','Degraaff','test@test2.nl','10','$2y$10$DnkC1TNnShsfXMjT/X5yEuEk4z59w9zID5F9MU.4UTEQa3C2Rvoz6','Administrator',1,'20180225_140844.jpg'),(99,'Jandino','Hoeksema','stephanhoeksema@hotmail.nl','46','$2y$10$8nLADCtS07poCDtt.wL0xuw4rhe21oZ1P96GgNyWVFbvidQO.y2ge','Administrator',1,'3869 aangepast.png');
+INSERT INTO `users` VALUES (87,'aaron','weggemans','aaronweggemans@hotmail.nl','0631234504','$2y$10$RVn5I.t.L1hTy1lz2DevcuswwuiuQCUbc4lXWmnN0sBwNiC5VEd/u','Administrator',1,'3869 aangepast.png',NULL),(93,'Onno','Kasanmoentalib','onnoadmin@gmail.com','0320795038','$2y$10$4lXEXVU32G.g9/hGafgmXO8YIpTG5s.Bq/elLWSNFbLl82E5/6/QW','Administrator',1,'1.png',NULL),(96,'Onno','Kasanmoentalib','onnokas@gmail.com','0320795038','$2y$10$fvdvXzzbE6WCZJwEvjewduEE2YP36Vp7qNfDkdSRSp18kGXq7qoUa','Administrator',1,NULL,20),(99,'Onno','Kasanmoentalib','onnokind@gmail.com','0320795038','$2y$10$rxhfDR52L6eJ4.LuhCh4Geq61n12eF49cQBhNvWs/eAt4U6eUgXjC','Kind',1,NULL,14);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -239,4 +266,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-02 15:27:30
+-- Dump completed on 2018-11-03  1:25:17

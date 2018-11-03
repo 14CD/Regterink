@@ -1,11 +1,5 @@
 <?php require "partials/head.php" ?>
 <?php require "partials/nav.php" ?>
-<?php
-    //Waarom doe je dit hier Jeffrey? en ik heb wat weg gehaald omdat het niet werkte
-    $id = $_SESSION["id"];
-    $app['database']->Get_current_Account_info($id);
-    $profilePicture = $app['database']->selectWhere("users", $_SESSION["id"]);
-?>
     <div id="wrapper">
         <?php require "partials/sidebar.php" ?>
         <div id="content-wrapper">
@@ -21,7 +15,7 @@
                         Uw gegevens
                     </div>
                     <div class="card-body">
-                        <form action="Account_info_change" method="post" enctype="multipart/form-data">
+                        <form action="account_info_change" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-8">
                                     <table class="table table-striped">
